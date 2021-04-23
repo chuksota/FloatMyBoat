@@ -1,0 +1,15 @@
+.nav-bar{
+  display: flex;
+  box-sizing: border-box;
+  border: 2px solid black;
+  box-shadow: black;
+  justify-content:flex-end;
+  height: 50px;
+  background-color: white;
+  box-shadow: 5px 5px 5px  rgb(0,0,0, .2);
+}
+
+.nav-links{
+  color:black;
+  padding: 10px;
+}

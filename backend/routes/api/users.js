@@ -1,10 +1,10 @@
 const express = require('express');
 const asyncHandler = require('express-async-handler');
+const { setTokenCookie, requireAuth } = require('../../utils/auth');
+const router = express.Router();
 const { check } = require('express-validator');
 const { handleValidationErrors } = require('../../utils/validation');
-const { setTokenCookie, requireAuth } = require('../../utils/auth');
 const { User } = require('../../db/models');
-const router = express.Router();
 
 const validateSignup = [
   check('email')
@@ -41,17 +41,6 @@ router.post(
   }),
 );
 
-router.get(
-  '/',
-  restoreUser,
-  (req, res) => {
-    const { user } = req;
-    if (user) {
-      return res.json({
-        user: user.toSafeObject()
-      });
-    } else return res.json({});
-  }
-);
+
 
 module.exports = router;

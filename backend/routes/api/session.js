@@ -1,15 +1,11 @@
 const express = require('express')
 const router = express.Router();
-const sessionRouter = require('./session.js');
-const usersRouter = require('./users.js');
+const asyncHandler = require('express-async-handler');
 const { setTokenCookie, restoreUser } = require('../../utils/auth');
 const { User } = require('../../db/models');
-const asyncHandler = require('express-async-handler');
 const { check } = require('express-validator');
 const { handleValidationErrors } = require('../../utils/validation');
-router.use('/session', sessionRouter);
 
-router.use('/users', usersRouter);
 
 const validateLogin = [
   check('credential')
@@ -53,5 +49,19 @@ router.delete(
     return res.json({ message: 'success' });
   }
 );
+
+router.get(
+  '/',
+  restoreUser,
+  (req, res) => {
+    const { user } = req;
+    if (user) {
+      return res.json({
+        user: user.toSafeObject()
+      });
+    } else return res.json({});
+  }
+);
+
 
 module.exports = router;

@@ -1,0 +1,8 @@
+.log_in--form{
+  display: flex;
+  box-sizing: border-box;
+  flex-direction: column;
+  border:2px solid black;
+  height: auto;
+  justify-content: center;
+}

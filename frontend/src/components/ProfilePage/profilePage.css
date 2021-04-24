@@ -1,4 +1,37 @@
 .dashboard{
+  padding-top: 20px;
   display: grid;
-  grid-template-columns: 1;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-areas:
+  "profileCard acceptingGuests"
+  "profileCard acceptingGuests"
+  "profileCard currentListings"
+  "profileCard currentListings"
+  "profileCard aboutSection"
+  "profileCard aboutSection"
+  ;
+}
+
+.dash_board--left{
+  grid-area: profileCard;
+  box-sizing: border-box;
+  box-shadow: 2px 2px 2px rgba(0,0,0, .5);
+  padding: 5px;
+}
+
+.accepting_guests{
+  grid-area: acceptingGuests;
+
+  box-shadow: 2px 2px 2px rgba(0,0,0, .5);
+}
+
+.all__listings{
+  grid-area: currentListings;
+  box-shadow: 2px 2px 2px rgba(0,0,0, .5);
+}
+
+.about{
+  grid-area: aboutSection;
+  box-shadow: 2px 2px 2px rgba(0,0,0, .5);
 }

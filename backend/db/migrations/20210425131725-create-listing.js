@@ -9,19 +9,34 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       description: {
-        type: Sequelize.STRING(300)
+        type: Sequelize.STRING(300),
+        allowNull: false
+      },
+      price: {
+        type: Sequelize.INTEGER,
+        allowNull: false
+      },
+      boatType: {
+        type: Sequelize.STRING(30),
+        allowNull: false
+      },
+      imageUrl: {
+        type: Sequelize.STRING
       },
       address: {
         type: Sequelize.STRING(100),
-        unique:true
-      },
+        unique:true,
+        allowNull: false
+        },
       destinationId: {
         type: Sequelize.INTEGER,
-        references: {model: 'Destinations'}
+        references: {model: 'Destinations'},
+        allowNull: false
       },
       userId: {
         type: Sequelize.INTEGER,
-        references: {model: 'Users'}
+        references: {model: 'Users'},
+        allowNull: false
       },
       createdAt: {
         allowNull: false,

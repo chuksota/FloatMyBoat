@@ -9,17 +9,23 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       description: {
-        type: Sequelize.STRING(300)
+        type: Sequelize.STRING(300),
+        allowNull: false
       },
       listingId: {
         type: Sequelize.INTEGER,
-        references: {model: "Listings"}
+        references: {model: "Listings"},
+        allowNull: false
       },
       userId: {
         type: Sequelize.INTEGER,
-        references: {model: 'Users'}
+        references: {model: 'Users'},
+        allowNull: false
       },
-      bookingDate: {
+      startDate: {
+        type: Sequelize.DATE
+      },
+      endDate: {
         type: Sequelize.DATE
       },
       createdAt: {

@@ -8,16 +8,22 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      description: {
+      author: {
         type: Sequelize.STRING
+      },
+      review: {
+        type: Sequelize.STRING,
+        allowNull: false
       },
       userId: {
         type: Sequelize.INTEGER,
-        references: {model: 'Users'}
+        references: {model: 'Users'},
+        allowNull: false
       },
       listingId: {
         type: Sequelize.INTEGER,
-        references: {model: 'Listings'}
+        references: {model: 'Listings'},
+        allowNull: false
       },
       createdAt: {
         allowNull: false,

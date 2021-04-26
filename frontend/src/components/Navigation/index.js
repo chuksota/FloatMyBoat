@@ -10,13 +10,18 @@ function Navigation({ isLoaded }){
   let sessionLinks;
   if (sessionUser) {
     sessionLinks = (
+      <>
       <ProfileButton user={sessionUser} />
+      <NavLink to='/destinations'>Destinations</NavLink>
+      <NavLink to='/profile'>Profile</NavLink>
+      </>
     );
   } else {
     sessionLinks = (
       <>
         <NavLink  className='nav-links' to="/login">Log In</NavLink>
         <NavLink className='nav-links' to="/signup">Sign Up</NavLink>
+        <NavLink to='/destinations'>Destinations</NavLink>
       </>
     );
   }

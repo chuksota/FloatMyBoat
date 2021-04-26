@@ -6,6 +6,7 @@ import * as sessionActions from "./store/session";
 import SignupFormPage from './components/SignupFormPage'
 import Navigation from './components/Navigation'
 import ProfilePage from './components/ProfilePage'
+import DestinationsPage from './components/Destinations'
 
 function App() {
   const dispatch = useDispatch();
@@ -27,6 +28,9 @@ function App() {
       </Route>
       <Route path='/profile'>
         <ProfilePage />
+      </Route>
+      <Route path='/destinations'>
+        <DestinationsPage/>
       </Route>
     </Switch>
       )}

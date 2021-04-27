@@ -1,5 +1,6 @@
 
 
+
 const LOAD_DESTINATIONS = 'destinations/LOAD_DESTINATIONS'
 
 const loadDestinations = destinations => ({
@@ -11,6 +12,7 @@ export const getDestinations = () => async dispatch =>{
   const response = await fetch('/api/destinations')
   if(response.ok){
     const destinations = await response.json();
+    console.log(destinations)
     dispatch(loadDestinations(destinations))
   }
 }

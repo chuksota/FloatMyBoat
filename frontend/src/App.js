@@ -7,7 +7,7 @@ import SignupFormPage from './components/SignupFormPage'
 import Navigation from './components/Navigation'
 import ProfilePage from './components/ProfilePage'
 import DestinationsPage from './components/Destinations'
-
+import DestinationListings from './components/DestinationListings'
 function App() {
   const dispatch = useDispatch();
   const [isLoaded, setIsLoaded] = useState(false);
@@ -29,8 +29,11 @@ function App() {
       <Route path='/profile'>
         <ProfilePage />
       </Route>
-      <Route path='/destinations'>
+      <Route  path={['/destinations']} exact>
         <DestinationsPage/>
+      </Route>
+      <Route path='/destinations/:destinationId'>
+        <DestinationListings/>
       </Route>
     </Switch>
       )}

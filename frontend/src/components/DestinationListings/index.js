@@ -7,18 +7,20 @@ const DestinationListings = () =>{
   const dispatch = useDispatch()
   const {destinationId} = useParams()
   const listings = useSelector(state=> state.destinationListings)
-  console.log('Im in the listings component',listings)
+
   useEffect(()=>{
     dispatch(getListings(destinationId))
   }, [destinationId, dispatch])
   return(
     <>
+          <button>add a new listing</button>
     {listings.map(listing => (
-        <div key={listing.id} className='locationCard'>
+        <div key={listing.id} className={`listingCard-${listing.id}`}>
           {`${listing.description}, ${listing.address}`}
         </div>
       ))}
-    </>
+      </>
+
   )
 }
 

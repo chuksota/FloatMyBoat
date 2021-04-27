@@ -1,6 +1,6 @@
 
 
-
+const CREATE_LISTING = 'listings/CREATE_LISTINGS'
 const LOAD_LISTINGS = 'listings/LOAD_LISTINGS'
 
 const loadListings = listings => ({
@@ -8,15 +8,20 @@ const loadListings = listings => ({
   listings
 })
 
+const createListing = newListing => ({
+  type: CREATE_LISTING,
+  newListing
+})
+
 export const getListings = (id) => async dispatch =>{
   const response = await fetch(`/api/destinations/${id}`)
 
   if(response.ok){
     const listings = await response.json();
-    console.log('Im in the thunk action', listings)
     dispatch(loadListings(listings))
   }
 }
+
 
 const listingsReducer = (state = [] , action) => {
   switch(action.type){

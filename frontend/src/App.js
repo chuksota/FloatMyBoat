@@ -29,10 +29,10 @@ function App() {
       <Route path='/profile'>
         <ProfilePage />
       </Route>
-      <Route  path={['/destinations']} exact>
+      <Route exact path='/destinations' >
         <DestinationsPage/>
       </Route>
-      <Route path='/destinations/:destinationId'>
+      <Route path='/destinations/:destinationId/listings'>
         <DestinationListings/>
       </Route>
     </Switch>

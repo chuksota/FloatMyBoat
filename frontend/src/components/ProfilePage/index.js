@@ -1,6 +1,10 @@
 import './profilePage.css'
 
+
 function ProfilePage(){
+
+
+
   return(
     <div className='dashboard'>
     <div className='dash_board--left'>Left View Area</div>

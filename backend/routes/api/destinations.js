@@ -18,7 +18,6 @@ router.get('/:id', asyncHandler(async (req, res) => {
 }))
 
 
-
 router.post('/:id/listings', asyncHandler(async(req, res)=>{
   let {description, price, boatType, address} = req.body
 
@@ -28,19 +27,21 @@ router.post('/:id/listings', asyncHandler(async(req, res)=>{
     boatType,
     address
   })
-  res.json({newListing})
+ return  res.json(newListing)
 }))
 
-router.put('/:id/listings/:id', asyncHandler(async(req, res)=>{
+
+router.put('/listings/:listingId', asyncHandler(async(req, res)=>{
   let {description, price, boatType, address} = req.body
-  let updateListing = await Listing.update({
+  let updatedListing = await Listing.update({
     description,
     price,
     boatType,
     address
   })
+  return res.json(updatedListing)
 }))
-router.delete('/:id/listings/:id', asyncHandler(async (req,res)=>{
+router.delete('/listings/:id', asyncHandler(async (req,res)=>{
   return await Listing.delete({where: {id: req.params.id}})
 }))
 

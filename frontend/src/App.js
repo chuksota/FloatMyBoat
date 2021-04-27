@@ -8,6 +8,7 @@ import Navigation from './components/Navigation'
 import ProfilePage from './components/ProfilePage'
 import DestinationsPage from './components/Destinations'
 import DestinationListings from './components/DestinationListings'
+import ListingDetails from './components/ListingDetails'
 function App() {
   const dispatch = useDispatch();
   const [isLoaded, setIsLoaded] = useState(false);
@@ -34,6 +35,9 @@ function App() {
       </Route>
       <Route path='/destinations/:destinationId/listings'>
         <DestinationListings/>
+      </Route>
+      <Route path='/listing/:id'>
+        <ListingDetails/>
       </Route>
     </Switch>
       )}

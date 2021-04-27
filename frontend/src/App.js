@@ -39,6 +39,9 @@ function App() {
       <Route path='/listing/:id'>
         <ListingDetails/>
       </Route>
+      <Route>
+        <p>Page Not Found</p>
+      </Route>
     </Switch>
       )}
     </>

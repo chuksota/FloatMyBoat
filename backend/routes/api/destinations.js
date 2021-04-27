@@ -18,7 +18,7 @@ router.get('/:id', asyncHandler(async (req, res) => {
 }))
 
 
-router.post('/:id/listings', asyncHandler(async(req, res)=>{
+router.post('/listings', asyncHandler(async(req, res)=>{
   let {description, price, boatType, address} = req.body
 
   let newListing = await Listing.create({

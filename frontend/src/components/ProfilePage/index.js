@@ -3,6 +3,7 @@ import {useDispatch, useSelector} from 'react-redux'
 import {useEffect} from 'react'
 import {getDestinations} from '../../store/destinations'
 import {NavLink} from 'react-router-dom'
+
 function ProfilePage(){
   const dispatch = useDispatch()
   const destinations = useSelector(state => state.destination)

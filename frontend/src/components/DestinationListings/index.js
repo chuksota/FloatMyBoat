@@ -7,6 +7,7 @@ const DestinationListings = () => {
   const dispatch = useDispatch()
   const { destinationId } = useParams()
   const listings = useSelector(state => state.destinationListings.all)
+  
 
   useEffect(() => {
     dispatch(getListings(destinationId))

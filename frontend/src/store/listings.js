@@ -19,6 +19,15 @@ const createListing = newListing => ({
   newListing
 })
 
+export const createNewListing = (id) => async dispatch => {
+  const response = await fetch(`/api/destinations/${id}/listings`)
+
+  if(response.ok){
+    const newListing = await response.json
+    dispatch(createListing(newListing))
+  }
+}
+
 export const getOneListing = (id) => async dispatch => {
   const response = await fetch(`/api/listings/${id}`)
   if(response.ok){

@@ -3,7 +3,7 @@
 const CREATE_LISTING = 'listings/CREATE_LISTINGS'
 const LOAD_LISTINGS = 'listings/LOAD_LISTINGS'
 const GET_DETAILS = 'listings/GET_DETAILS'
-
+const DELETE_LISTING = 'listings/DELETE_LISTINGS'
 const loadListings = listings => ({
   type: LOAD_LISTINGS,
   listings
@@ -17,6 +17,11 @@ const getDetails = details => ({
 const createListing = newListing => ({
   type: CREATE_LISTING,
   newListing
+})
+
+const deleteListing = deletedListing => ({
+  type: DELETE_LISTING,
+  deletedListing
 })
 
 export const createNewListing = newListing => async dispatch => {
@@ -49,6 +54,14 @@ export const getListings = (id) => async dispatch =>{
   }
 }
 
+export const deleteAListing = (id) => async dispatch => {
+  const response = await fetch(`/api/destinations/listings/${id}`, {
+    method: 'DELETE'
+  })
+  if(response.ok){
+    dispatch(deleteListing())
+  }
+}
 
 const listingsReducer = (state = {all: [], current:{}} , action) => {
   switch(action.type){

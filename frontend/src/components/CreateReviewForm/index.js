@@ -2,16 +2,16 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { createReview } from '../../store/reviews';
-// import { useHistory } from 'react-router-dom';
+
 import './CreateReviewForm.css';
 
 const CreateReviewForm = () => {
 
   const dispatch = useDispatch();
-  // const history = useHistory();
+  
   const [review, setReview] = useState("");
   const [author, setAuthor] = useState("")
-  
+
 
 
   const handleSubmit = async (e) => {

@@ -14,12 +14,11 @@ export const getUserInformation = (id) => async dispatch => {
   const response = await csrfFetch(`/api/users/${id}`)
   if (!response.ok) throw response;
   const userInfo = await  response.json()
-  console.log('User Info', userInfo)
-  dispatch(loadUser(userInfo))
+  dispatch(loadUser(userInfo.Listings))
 
 }
 
-const userReducer = (state = { all: [], current: {} }, action) => {
+const userReducer = (state = {}, action) => {
   switch (action.type) {
     case LOAD_USER: {
       const newState = {}

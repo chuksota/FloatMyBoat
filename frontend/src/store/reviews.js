@@ -17,10 +17,11 @@ const createReview = newReview => async dispatch => {
 }
 
 export const getReviews = (id) => async dispatch => {
-  const res = await fetch(`/api/reviews/${id}`)
+  const res = await fetch(`/api/reviews/${1}`)
   if(res.ok){
     const reviews = await res.json()
     dispatch(loadReviews(reviews))
+    console.log("Im in the reviewsReducer", reviews)
   }
 }
 
@@ -39,7 +40,7 @@ const reviewsReducer = (state = {all: [], current:{}} , action) => {
     case CREATE_REVIEW: {
       const newState = {}
       const allReviews = []
-      action.reviews.forEach(review=>{
+      action.listingReviews.forEach(review=>{
         allReviews.push(review)
       })
       newState.all=allReviews

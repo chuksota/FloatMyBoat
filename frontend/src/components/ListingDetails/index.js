@@ -2,7 +2,8 @@ import { getOneListing } from '../../store/listings'
 import { useParams } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { useState, useEffect } from 'react'
-
+import { getReviews } from '../../store/reviews'
+import './ListingDetails.css'
 
 
 function ListingDetails(){
@@ -10,24 +11,28 @@ function ListingDetails(){
   const dispatch = useDispatch()
   const details = useSelector(state=> state.destinationListings.current)
   const reviews = useSelector(state=> state.reviews.all )
-  console.log(reviews)
+
+
   useEffect(()=>{
     dispatch(getOneListing(id))
+    dispatch(getReviews(id))
   },[dispatch, id])
 
   return(
     <div>
-     Address: {details.address}
+      <div className='listing__details-container'>
+      Address: {details.address}
       Boat Type: {details.boatType}
-      <ul>
+      </div>
+      <div className='reviews_container'>
         {reviews.map(review => (
-          <li key={review.id}>
-            {review.author}
-            {review.review}
-          </li>
+          <div key={review.id} className='review_cards'>
+            Author: {review.author}
+
+            Review: {review.review}
+          </div>
         ))}
-        this is where the reviews will go
-      </ul>
+      </div>
     </div>
   )
 }

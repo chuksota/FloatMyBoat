@@ -3,7 +3,7 @@ const router = express.Router()
 const asyncHandler = require('express-async-handler')
 const {Review} = require('../../db/models')
 
-router.get('/:id/reviews', asyncHandler(async(req, res)=>{
+router.get('/:id', asyncHandler(async(req, res)=>{
   const listingReviews = await Review.findAll({
     where: {
       listingId: req.params.id
@@ -12,7 +12,7 @@ router.get('/:id/reviews', asyncHandler(async(req, res)=>{
   return res.json(listingReviews)
 }))
 
-router.post('/reviews', asyncHandler(async(req, res)=>{
+router.post('/', asyncHandler(async(req, res)=>{
   let newReview = await Review.create(req.body)
   return res.json(newReview)
 }))

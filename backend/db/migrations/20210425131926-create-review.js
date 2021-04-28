@@ -12,13 +12,12 @@ module.exports = {
         type: Sequelize.STRING
       },
       review: {
-        type: Sequelize.STRING,
+        type: Sequelize.STRING(3000),
         allowNull: false
       },
       userId: {
         type: Sequelize.INTEGER,
         references: {model: 'Users'},
-        allowNull: false
       },
       listingId: {
         type: Sequelize.INTEGER,

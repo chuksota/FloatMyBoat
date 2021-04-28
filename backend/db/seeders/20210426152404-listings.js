@@ -46,7 +46,7 @@ module.exports = {
   },
   {
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-    address: '117 West La Sierra St.',
+    address: '8404 San Pablo Street',
     boatType: 'Row Boat',
     price: 35,
     destinationId: 1,

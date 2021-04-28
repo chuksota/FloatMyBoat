@@ -4,11 +4,13 @@ import sessionReducer from './session'
 import destinationsReducer from './destinations'
 import listingsReducer from './listings'
 import reviewsReducer from './reviews'
+import userReducer from './profile'
 const rootReducer = combineReducers({
   session: sessionReducer,
   destination: destinationsReducer,
   destinationListings: listingsReducer,
-  reviews: reviewsReducer
+  reviews: reviewsReducer,
+  userInfo: userReducer
 });
 
 let enhancer;

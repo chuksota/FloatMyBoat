@@ -1,0 +1,39 @@
+import {csrfFetch} from '../store/csrf'
+const LOAD_USER = 'profile/LOAD_USER'
+
+
+const loadUser = userInfo => {
+  return {
+    type: LOAD_USER,
+    userInfo
+  }
+}
+
+
+export const getUserInformation = (id) => async dispatch => {
+  const response = await csrfFetch(`/api/users/${id}`)
+  if (!response.ok) throw response;
+  const userInfo = await  response.json()
+  console.log('User Info', userInfo)
+  dispatch(loadUser(userInfo))
+
+}
+
+const userReducer = (state = { all: [], current: {} }, action) => {
+  switch (action.type) {
+    case LOAD_USER: {
+      const newState = {}
+      const userInfo = []
+      action.userInfo.forEach(info => {
+        userInfo.push(info)
+      })
+      newState.all = userInfo
+      newState.current = { ...state.current }
+      return newState
+    }
+    default:
+      return state
+  }
+}
+
+export default userReducer

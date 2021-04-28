@@ -3,12 +3,16 @@ import {useDispatch, useSelector} from 'react-redux'
 import {useEffect} from 'react'
 import {getDestinations} from '../../store/destinations'
 import {NavLink} from 'react-router-dom'
-
+import {getUserInformation} from '../../store/profile'
 function ProfilePage(){
   const dispatch = useDispatch()
   const destinations = useSelector(state => state.destination)
+  const user = useSelector(state=>state.session.user)
+  const userInfo = useSelector(state=> state.userInfo)
+  console.log(user)
   useEffect(()=>{
     dispatch(getDestinations())
+    dispatch(getUserInformation(user.id))
   },[dispatch])
   return(
     <div className='dashboard'>

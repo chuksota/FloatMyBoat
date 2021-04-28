@@ -4,6 +4,7 @@ const CREATE_LISTING = 'listings/CREATE_LISTINGS'
 const LOAD_LISTINGS = 'listings/LOAD_LISTINGS'
 const GET_DETAILS = 'listings/GET_DETAILS'
 const DELETE_LISTING = 'listings/DELETE_LISTINGS'
+
 const loadListings = listings => ({
   type: LOAD_LISTINGS,
   listings

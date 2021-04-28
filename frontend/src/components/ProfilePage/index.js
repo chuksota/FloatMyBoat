@@ -8,8 +8,8 @@ function ProfilePage() {
   const dispatch = useDispatch()
   const destinations = useSelector(state => state.destination)
   const user = useSelector(state => state.session.user)
-  const userInfo = useSelector(state => state.userInfo.all)
-  console.log(userInfo)
+  // const userInfo = useSelector(state => state.userInfo.all)
+  // console.log(userInfo)
   useEffect(() => {
     dispatch(getDestinations())
     dispatch(getUserInformation(user.id))
@@ -18,12 +18,12 @@ function ProfilePage() {
     <div className='dashboard'>
       <div className='dash_board--left'>Left View Area</div>
       <div className='accepting_guests'>Whether or not you're accepting guests</div>
-      <div className='all__listings'>{
-      userInfo.map(listing=>(
-        <div key={listing.id} className={`dashboard__listingCard-${listing.id}`}>
-          {listing.description}
-        </div>
-      ))}</div>
+      <div className='all__listings'>
+      {/* // userInfo.map(listing=>(
+      //   <div key={listing.id} className={`dashboard__listingCard-${listing.id}`}>
+      //     {listing.description}
+      //   </div> */}
+      </div>
       <div className='about'> {
         destinations.map(destination => (
           <div key={destination.id} className={`dashboardlocationCard-${destination.id}`}>

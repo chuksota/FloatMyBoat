@@ -11,9 +11,10 @@ const loadUser = userInfo => {
 
 
 export const getUserInformation = (id) => async dispatch => {
-  const response = await csrfFetch(`/api/users/${id}`)
+  const response = await fetch(`/api/users/${id}`)
   if (!response.ok) throw response;
   const userInfo = await  response.json()
+  console.log("In thunk", userInfo)
   dispatch(loadUser(userInfo.Listings))
 
 }

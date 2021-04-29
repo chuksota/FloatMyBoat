@@ -10,7 +10,7 @@ import DestinationsPage from './components/Destinations'
 import DestinationListings from './components/DestinationListings'
 import ListingDetails from './components/ListingDetails'
 import HomePage from './components/HomePage'
-
+import Footer from './components/Footer'
 function App() {
   const dispatch = useDispatch();
   const [isLoaded, setIsLoaded] = useState(false);
@@ -49,6 +49,7 @@ function App() {
       </Route>
     </Switch>
       )}
+      <Footer/>
     </>
   );
 }

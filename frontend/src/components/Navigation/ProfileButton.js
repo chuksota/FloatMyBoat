@@ -6,6 +6,7 @@ function ProfileButton({ user }) {
   const history = useHistory()
   const dispatch = useDispatch();
   const [showMenu, setShowMenu] = useState(false);
+  
   const logoutRedirect = () => {
     return history.push('/')
   }
@@ -29,6 +30,7 @@ function ProfileButton({ user }) {
   const logout = (e) => {
     e.preventDefault();
     dispatch(sessionActions.logout());
+    logoutRedirect()
   };
 
   return (

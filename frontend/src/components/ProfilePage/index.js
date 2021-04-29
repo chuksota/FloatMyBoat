@@ -8,21 +8,26 @@ function ProfilePage() {
   const dispatch = useDispatch()
   const destinations = useSelector(state => state.destination)
   const user = useSelector(state => state.session.user)
-  // const userInfo = useSelector(state => state.userInfo.all)
-  // console.log(userInfo)
+  const userInfo = useSelector(state => state.userInfo.all)
+  console.log(userInfo)
   useEffect(() => {
     dispatch(getDestinations())
     dispatch(getUserInformation(user.id))
-  }, [dispatch])
+  }, [dispatch, user.id])
   return (
+    <>
+    <h1>Welcome back {user.username}! </h1>
     <div className='dashboard'>
-      <div className='dash_board--left'>Left View Area</div>
-      <div className='accepting_guests'>Whether or not you're accepting guests</div>
+      <div className='dash_board--left'>
+
+      </div>
+      <div className='accepting_guests'>Bookings</div>
       <div className='all__listings'>
-      {/* // userInfo.map(listing=>(
-      //   <div key={listing.id} className={`dashboard__listingCard-${listing.id}`}>
-      //     {listing.description}
-      //   </div> */}
+       {userInfo.map(listing=>(
+        <div key={listing.id} className={`dashboard__listingCard-${listing.id}`}>
+         {listing.description}
+         </div>
+       ))}
       </div>
       <div className='about'> {
         destinations.map(destination => (
@@ -33,6 +38,7 @@ function ProfilePage() {
           </div>
         ))}</div>
     </div>
+    </>
   )
 }
 

@@ -1,0 +1,15 @@
+.listings__container{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+
+.listingCard{
+  color: white;
+  height: 250px;
+  box-sizing: border-box;
+  box-shadow: 3px 3px 3px 3px rgba(0,0,0, .4);
+  width: 300px;
+  margin: 5px;
+}

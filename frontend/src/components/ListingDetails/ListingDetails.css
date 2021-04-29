@@ -2,6 +2,9 @@
   display: flex;
   box-sizing: border-box;
   margin-top: 20px;
+  margin: auto;
+  flex-direction: column;
+  box-shadow: 2px 2px 2px 2px black;
 }
 
 .reviews_container{
@@ -9,4 +12,15 @@ display: flex;
 flex-direction: column;
 margin: 10px;
 font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.review_cards{
+  color:black;
+  display: flex;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  height: 250px;
+  box-sizing: border-box;
+  box-shadow: 3px 3px 3px 3px rgba(0,0,0, .4);
+  width: auto;
+  margin: 5px;
 }

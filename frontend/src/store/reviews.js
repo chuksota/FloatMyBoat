@@ -13,7 +13,7 @@ export const createReview = newReview => async dispatch => {
   })
   if(!res.ok) throw res;
   const review = res.json()
-  dispatch(createReview(newReview))
+  dispatch(createReview(review))
 }
 
 export const getReviews = (id) => async dispatch => {

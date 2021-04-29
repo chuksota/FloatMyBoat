@@ -1,11 +1,11 @@
 import { getOneListing } from '../../store/listings'
 import { useParams } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
-import { useState, useEffect } from 'react'
+import { useEffect } from 'react'
 import { getReviews } from '../../store/reviews'
 import './ListingDetails.css'
 import CreateReviewForm from '../CreateReviewForm'
-
+import {NavLink} from 'react-router-dom'
 function ListingDetails(){
   const {id} = useParams()
   const dispatch = useDispatch()
@@ -29,6 +29,7 @@ function ListingDetails(){
   }
   return(
     <div>
+
       <div className='listing__details-container'>
       Address: {details.address}
       Boat Type: {details.boatType}
@@ -37,9 +38,8 @@ function ListingDetails(){
       {reviewForm}
       <div className='reviews_container'>
         {reviews.map(review => (
-          <div key={review.id} className='review_cards'>
+          <div key={review.id} className={`review_cards`}>
             Author: {review.author}
-
             Review: {review.review}
           </div>
         ))}

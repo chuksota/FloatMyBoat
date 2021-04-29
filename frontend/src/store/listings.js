@@ -25,10 +25,10 @@ const deleteListing = deletedListing => ({
   deletedListing
 })
 
-export const createNewListing = newListing => async dispatch => {
-  const response = await fetch(`/api/destinations/listings`,{
+export const createNewListing = addedListing => async dispatch => {
+  const response = await fetch(`/api/destinations/listings`, {
   method: 'POST',
-  body: JSON.stringify(newListing)
+  body: JSON.stringify(addedListing)
   }
 )
 

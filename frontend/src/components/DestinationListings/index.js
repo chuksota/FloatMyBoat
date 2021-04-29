@@ -13,7 +13,7 @@ const DestinationListings = () => {
   let userForm;
   if(sessionUser){
     userForm = (
-      <CreateNewListing/>
+      <CreateNewListing user={sessionUser} id={destinationId}/>
     )
   } else {
     userForm = (
@@ -31,7 +31,7 @@ const DestinationListings = () => {
     {userForm}
     <div className='listings__container'>
       {listings.map(listing => (
-        <Link to={`/listing/${listing.id}`}>
+        <Link key={listing.id}to={`/listing/${listing.id}`}>
         <div key={listing.id} className={`listingCard`}>
         {`${listing.description}, ${listing.address}`}
         </div>

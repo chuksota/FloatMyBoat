@@ -17,11 +17,11 @@ function ListingDetails(){
     dispatch(getOneListing(id))
     dispatch(getReviews(id))
   },[dispatch, id])
-  
+
   let reviewForm;
   if(sessionUser){
     reviewForm = (
-      <CreateReviewForm listingId={id}/>
+      <CreateReviewForm listingId={id} user={sessionUser}/>
     );
   }else {
     reviewForm =(

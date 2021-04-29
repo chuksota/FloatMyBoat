@@ -1,51 +1,24 @@
+import React, { useState } from 'react';
+import { Modal } from '../../context/Modal';
+import CreateReviewForm from './CreateReviewForm';
 
-import { useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { createReview } from '../../store/reviews';
 
-import './CreateReviewForm.css';
 
-const CreateReviewForm = ({id}) => {
-
-  const dispatch = useDispatch();
-
-  const [review, setReview] = useState("");
-  const [author, setAuthor] = useState("")
-
-  const resetFields = () => {
-    setReview("")
-    setAuthor("")
-    return
-  }
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-
-    const newReview = {
-      author,
-      review,
-      listingId: Number.parseInt(id)
-    };
-    await dispatch(createReview(newReview))
-    resetFields()
-  };
-
+function CreateListingModal() {
+  const [showModal, setShowModal] = useState(false);
 
   return (
-    <section className="new-form-holder centered middled">
-      <form className="review-form" onSubmit={handleSubmit}>
-        <input value={author}onChange={e=> setAuthor(e.target.value)} placeholder='Name'></input>
-        <textarea
-          className="review-input"
-          type="text"
-          placeholder="Leave a review..."
-          value={review}
-          onChange={e => setReview(e.target.value)} />
-
-        <button type="submit">Submit</button>
-      </form>
-    </section>
+    <>
+      <div className="login-button">
+        <button onClick={() => setShowModal(true)}>Leave a review!</button>
+      </div>
+      {showModal && (
+        <Modal onClose={() => setShowModal(false)}>
+          <CreateReviewForm  />
+        </Modal>
+      )}
+    </>
   );
-};
+}
 
-export default CreateReviewForm
+export default CreateListingModal;

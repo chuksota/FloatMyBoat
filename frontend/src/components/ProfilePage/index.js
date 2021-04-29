@@ -24,8 +24,9 @@ function ProfilePage() {
       <div className='accepting_guests'>Bookings</div>
       <div className='all__listings'>
        {userInfo.map(listing=>(
-        <div key={listing.id} className={`dashboard__listingCard`}>
+         <div key={listing.id} className={`dashboard__listingCard`}>
          {listing.description}
+         <NavLink className='see-reviews' to={`/listing/${listing.id}`}>See reviews</NavLink>
          </div>
        ))}
       </div>

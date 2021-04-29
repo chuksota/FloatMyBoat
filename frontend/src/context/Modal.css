@@ -1,0 +1,36 @@
+#modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
+
+#modal-background {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+#modal-content {
+  font-family: arial;
+  font-size: 0.8em;
+  background-color: #fefefe;
+  margin: 20% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  border-radius: 10px;
+  width: 500px; /* Could be more or less, depending on screen size */
+  height: auto;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+

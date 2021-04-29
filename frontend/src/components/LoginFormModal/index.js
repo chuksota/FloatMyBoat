@@ -1,24 +1,23 @@
 import React, { useState } from 'react';
 import { Modal } from '../../context/Modal';
-import CreateNewListing from './CreateListingForm';
+import LoginForm from './LoginForm';
 
 
-
-function CreateListingModal() {
+function LoginFormModal() {
   const [showModal, setShowModal] = useState(false);
 
   return (
     <>
       <div className="login-button">
-        <button onClick={() => setShowModal(true)}>Create a new listing</button>
+        <button onClick={() => setShowModal(true)}>Log In</button>
       </div>
       {showModal && (
         <Modal onClose={() => setShowModal(false)}>
-          <CreateNewListing  />
+          <LoginForm />
         </Modal>
       )}
     </>
   );
 }
 
-export default CreateListingModal;
+export default LoginFormModal;

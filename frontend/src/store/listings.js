@@ -1,4 +1,4 @@
-
+import {csrfFetch} from './csrf'
 
 const CREATE_LISTING = 'listings/CREATE_LISTINGS'
 const LOAD_LISTINGS = 'listings/LOAD_LISTINGS'
@@ -26,7 +26,7 @@ const deleteListing = deletedListing => ({
 })
 
 export const createNewListing = addedListing => async dispatch => {
-  const response = await fetch(`/api/destinations/listings`, {
+  const response = await csrfFetch(`/api/destinations/listings`, {
   method: 'POST',
   body: JSON.stringify(addedListing)
   }

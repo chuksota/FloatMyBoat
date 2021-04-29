@@ -23,4 +23,5 @@ font-family: Georgia, 'Times New Roman', Times, serif;
   box-shadow: 3px 3px 3px 3px rgba(0,0,0, .4);
   width: auto;
   margin: 5px;
+  flex-direction: column;
 }

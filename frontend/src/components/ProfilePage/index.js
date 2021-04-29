@@ -15,7 +15,7 @@ function ProfilePage() {
     dispatch(getUserInformation(user.id))
   }, [dispatch, user.id])
   return (
-    <>
+    <main>
     <h1>Welcome back {user.username}! </h1>
     <div className='dashboard'>
       <div className='dash_board--left'>
@@ -24,21 +24,21 @@ function ProfilePage() {
       <div className='accepting_guests'>Bookings</div>
       <div className='all__listings'>
        {userInfo.map(listing=>(
-        <div key={listing.id} className={`dashboard__listingCard-${listing.id}`}>
+        <div key={listing.id} className={`dashboard__listingCard`}>
          {listing.description}
          </div>
        ))}
       </div>
       <div className='about'> {
         destinations.map(destination => (
-          <div key={destination.id} className={`dashboardlocationCard-${destination.id}`}>
-            <NavLink to={`/destinations/${destination.id}/listings`}>
+          <NavLink to={`/destinations/${destination.id}/listings`}>
+              <div key={destination.id} className={`dashboardLocationCards`}>
               {`${destination.city}, ${destination.country}`}
+            </div>
             </NavLink>
-          </div>
         ))}</div>
     </div>
-    </>
+    </main>
   )
 }
 

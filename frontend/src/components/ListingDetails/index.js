@@ -17,6 +17,7 @@ function ListingDetails(){
     dispatch(getOneListing(id))
     dispatch(getReviews(id))
   },[dispatch, id])
+  
   let reviewForm;
   if(sessionUser){
     reviewForm = (
@@ -39,8 +40,10 @@ function ListingDetails(){
       <div className='reviews_container'>
         {reviews.map(review => (
           <div key={review.id} className={`review_cards`}>
-            Author: {review.author}
-            Review: {review.review}
+
+            <div>Author: {review.author} </div>
+
+            <div>Review: {review.review} </div>
           </div>
         ))}
       </div>

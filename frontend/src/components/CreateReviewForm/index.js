@@ -8,7 +8,7 @@ import './CreateReviewForm.css';
 const CreateReviewForm = () => {
 
   const dispatch = useDispatch();
-  
+
   const [review, setReview] = useState("");
   const [author, setAuthor] = useState("")
 
@@ -22,7 +22,7 @@ const CreateReviewForm = () => {
       review,
 
     };
-    let createdReview = await dispatch(createReview(newReview))
+    await dispatch(createReview(newReview))
     setReview("")
   };
 

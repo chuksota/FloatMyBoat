@@ -2,13 +2,21 @@ import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { createNewListing } from '../../store/listings'
 
-const createNewListing = () => {
+const CreateNewListing = () => {
   const dispatch = useDispatch()
   const [description, setDescription] = useState("")
   const [boatType, setBoatType] = useState("")
   const [price, setPrice] = useState(0)
   const [imageUrl, setImageUrl] = useState("")
   const [numOfGuests, setNumOfGuests] = useState(0)
+
+  const resetFields = () => {
+      setDescription('')
+      setBoatType('')
+      setPrice(0)
+      setImageUrl('')
+      setNumOfGuests(0)
+  }
 
   const handleSubmit = async (e)=>{
       e.preventDefault()
@@ -19,12 +27,8 @@ const createNewListing = () => {
         imageUrl,
         numOfGuests
       }
-      dispatch(createNewListing(newListing))
-      setDescription('')
-      setBoatType('')
-      setPrice(0)
-      setImageUrl('')
-      setNumOfGuests(0)
+      await dispatch(createNewListing(newListing))
+      resetFields()
   }
   return (
     <div>
@@ -61,4 +65,4 @@ const createNewListing = () => {
   )
 }
 
-export default createNewListing
+export default CreateNewListing

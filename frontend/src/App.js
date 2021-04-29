@@ -9,6 +9,8 @@ import ProfilePage from './components/ProfilePage'
 import DestinationsPage from './components/Destinations'
 import DestinationListings from './components/DestinationListings'
 import ListingDetails from './components/ListingDetails'
+import HomePage from './components/HomePage'
+
 function App() {
   const dispatch = useDispatch();
   const [isLoaded, setIsLoaded] = useState(false);
@@ -21,6 +23,9 @@ function App() {
       <Navigation isLoaded={isLoaded}/>
       {isLoaded && (
     <Switch>
+      <Route exact path='/'>
+        <HomePage/>
+      </Route>
       <Route path="/login">
         <LoginFormPage />
       </Route>

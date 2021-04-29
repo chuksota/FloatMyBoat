@@ -6,7 +6,7 @@ const loadReviews = reviews => ({
   reviews
 })
 
-const createReview = newReview => async dispatch => {
+export const createReview = newReview => async dispatch => {
   const res = await fetch('/api/reviews', {
     method: 'POST',
     body: JSON.stringify(newReview)

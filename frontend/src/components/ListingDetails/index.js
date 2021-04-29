@@ -17,11 +17,15 @@ function ListingDetails(){
     dispatch(getOneListing(id))
     dispatch(getReviews(id))
   },[dispatch, id])
-  let sessionlinks;
+  let reviewForm;
   if(sessionUser){
-    sessionlinks = (
+    reviewForm = (
       <CreateReviewForm/>
-    )
+    );
+  }else {
+    reviewForm =(
+      <h2>Log in or create an account to leave a review!</h2>
+      )
   }
   return(
     <div>
@@ -30,7 +34,7 @@ function ListingDetails(){
       Boat Type: {details.boatType}
       </div>
       <h1>Reviews</h1>
-      <CreateReviewForm className='Leave a review'/>
+      {reviewForm}
       <div className='reviews_container'>
         {reviews.map(review => (
           <div key={review.id} className='review_cards'>

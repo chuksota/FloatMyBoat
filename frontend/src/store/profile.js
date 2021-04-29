@@ -19,7 +19,7 @@ export const getUserInformation = (id) => async dispatch => {
 
 }
 
-const userReducer = (state = {}, action) => {
+const userReducer = (state = {all: [], current:{}}, action) => {
   switch (action.type) {
     case LOAD_USER: {
       const newState = {}

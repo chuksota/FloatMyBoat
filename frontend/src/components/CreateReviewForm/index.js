@@ -5,14 +5,18 @@ import { createReview } from '../../store/reviews';
 
 import './CreateReviewForm.css';
 
-const CreateReviewForm = () => {
+const CreateReviewForm = ({id}) => {
 
   const dispatch = useDispatch();
 
   const [review, setReview] = useState("");
   const [author, setAuthor] = useState("")
 
-
+  const resetFields = () => {
+    setReview("")
+    setAuthor("")
+    return
+  }
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -20,10 +24,10 @@ const CreateReviewForm = () => {
     const newReview = {
       author,
       review,
-
+      listingId: Number.parseInt(id)
     };
     await dispatch(createReview(newReview))
-    setReview("")
+    resetFields()
   };
 
 

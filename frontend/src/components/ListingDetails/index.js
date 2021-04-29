@@ -20,7 +20,7 @@ function ListingDetails(){
   let reviewForm;
   if(sessionUser){
     reviewForm = (
-      <CreateReviewForm/>
+      <CreateReviewForm listingId={id}/>
     );
   }else {
     reviewForm =(

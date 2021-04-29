@@ -31,9 +31,11 @@ const DestinationListings = () => {
     {userForm}
     <div className='listings__container'>
       {listings.map(listing => (
+        <Link to={`/listing/${listing.id}`}>
         <div key={listing.id} className={`listingCard`}>
-          <Link to={`/listing/${listing.id}`}>{`${listing.description}, ${listing.address}`}</Link>
+        {`${listing.description}, ${listing.address}`}
         </div>
+          </Link>
       ))}
     </div>
     </>

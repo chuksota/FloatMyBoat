@@ -8,6 +8,9 @@
   box-shadow: 5px 5px 5px  rgb(0,0,0, .2);
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   border-radius: 5px;
+  right: 0px;
+  left: 0px;
+  top: 0px;
 }
 
 .nav-links{

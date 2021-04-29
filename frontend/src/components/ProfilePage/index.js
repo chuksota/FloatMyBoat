@@ -9,7 +9,6 @@ function ProfilePage() {
   const destinations = useSelector(state => state.destination)
   const user = useSelector(state => state.session.user)
   const userInfo = useSelector(state => state.userInfo.all)
-  console.log(userInfo)
   useEffect(() => {
     dispatch(getDestinations())
     dispatch(getUserInformation(user.id))
@@ -26,13 +25,13 @@ function ProfilePage() {
        {userInfo.map(listing=>(
          <div key={listing.id} className={`dashboard__listingCard`}>
          {listing.description}
-         <NavLink className='see-reviews' to={`/listing/${listing.id}`}>See reviews</NavLink>
+         <NavLink key={listing.id}className='see-reviews' to={`/listing/${listing.id}`}>See reviews</NavLink>
          </div>
        ))}
       </div>
       <div className='about'> {
         destinations.map(destination => (
-          <NavLink to={`/destinations/${destination.id}/listings`}>
+          <NavLink key={destination.id} to={`/destinations/${destination.id}/listings`}>
               <div key={destination.id} className={`dashboardLocationCards`}>
               {`${destination.city}, ${destination.country}`}
             </div>

@@ -2,11 +2,14 @@ import React, { useState, useEffect } from "react";
 import { useDispatch } from 'react-redux';
 import * as sessionActions from '../../store/session';
 import {useHistory} from 'react-router-dom'
+import ProfilePage from '../ProfilePage'
 function ProfileButton({ user }) {
   const history = useHistory()
   const dispatch = useDispatch();
   const [showMenu, setShowMenu] = useState(false);
-  
+  const showProfilePage = () => {
+    history.push('/profile')
+  }
   const logoutRedirect = () => {
     return history.push('/')
   }
@@ -36,12 +39,13 @@ function ProfileButton({ user }) {
   return (
     <>
       <button onClick={openMenu}>
-        <i class="fas fa-bars" />
+        <i className="fas fa-bars" />
       </button>
       {showMenu && (
         <ul className="profile-dropdown">
           <li>
             <button onClick={logout}>Log Out</button>
+            <button onClick={showProfilePage}>Profile</button>
           </li>
         </ul>
       )}

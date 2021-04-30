@@ -1,0 +1,25 @@
+{
+  "name": "authenticate-me",
+  "version": "1.0.0",
+  "description": "Float Your Boat is an app inspired by [Couchsurfing.com](https://www.couchsurfing.com/) and allows users to connect with real people in order to temporarily rent or borrow boats in new places.",
+  "main": "index.js",
+  "scripts": {
+    "heroku-postbuild": "npm run build --prefix frontend",
+    "install": "npm --prefix backend install backend && npm --prefix frontend install frontend",
+    "dev:backend": "npm install --prefix backend start",
+    "dev:frontend": "npm install --prefix frontend start",
+    "sequelize": "npm run --prefix backend sequelize",
+    "sequelize-cli": "npm run --prefix backend sequelize-cli",
+    "start": "npm start --prefix backend"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chuksota/project.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chuksota/project/issues"
+  },
+  "homepage": "https://github.com/chuksota/project#readme"
+}

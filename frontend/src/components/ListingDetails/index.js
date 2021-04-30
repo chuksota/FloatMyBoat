@@ -32,8 +32,12 @@ function ListingDetails(){
     <div>
 
       <div className='listing__details-container'>
+      <div>
       Address: {details.address}
+        </div>
+      <div>
       Boat Type: {details.boatType}
+        </div>
       </div>
       <h1>Reviews</h1>
       {reviewForm}
@@ -41,9 +45,9 @@ function ListingDetails(){
         {reviews.map(review => (
           <div key={review.id} className={`review_cards`}>
 
-            <div>Author: {review.author} </div>
+            <div className='reviewAuthor'>Author: {review.author} </div>
 
-            <div>Review: {review.review} </div>
+            <div className='reviewText'>Review: {review.review} </div>
           </div>
         ))}
       </div>

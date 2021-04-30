@@ -40,13 +40,13 @@ function ProfilePage() {
         {userInfo.map(listing => (
           <div key={listing.id} className={`dashboard__listingCard`}>
             <p>{listing.description}</p>
-           <button className='seeReviewsButton' onClick={()=>goToReviews(listing.id)}key={listing.id} className='see-reviews'>See reviews</button>
+           <button className='seeReviewsButton' onClick={()=>goToReviews(listing.id)}key={listing.id}>See reviews</button>
            <button className='deleteReviewsButton' onClick={()=> deleteListing(listing.id)}>Delete Listing</button>
           </div>
         ))}
       </div>
       <div className='about'>
-      <h1 className='headings'>Idk yet</h1>
+      <h3 className='headings'>Destinations</h3>
       {
         destinations.map(destination => (
           <NavLink key={destination.id} to={`/destinations/${destination.id}/listings`}>

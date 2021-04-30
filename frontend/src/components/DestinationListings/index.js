@@ -9,16 +9,16 @@ const DestinationListings = () => {
   const dispatch = useDispatch()
   const { destinationId } = useParams()
   const listings = useSelector(state => state.destinationListings.all)
-  const sessionUser = useSelector(state=> state.session.user)
+  const sessionUser = useSelector(state => state.session.user)
   console.log(sessionUser)
   let userForm;
-  if(sessionUser){
+  if (sessionUser) {
     userForm = (
-      <CreateNewListing user={sessionUser} id={destinationId}/>
+      <CreateNewListing user={sessionUser} id={destinationId} />
     )
   } else {
     userForm = (
-    <h2>Log in or create an account to list your boat!</h2>
+      <h2>Log in or create an account to list your boat!</h2>
     )
   }
 
@@ -28,18 +28,33 @@ const DestinationListings = () => {
 
   return (
     <>
-    <h1>Pick your next adventure!</h1>
-    {userForm}
-    <div className='listings__container'>
+      <h1>Pick your next adventure!</h1>
+      {userForm}
+      <div className='listings__container'>
 
-      {listings.map(listing => (
-        <Link key={listing.id}to={`/listing/${listing.id}`}>
-        <div key={listing.id} className={`listingCard-${listing.id}`}>
-       <p> {`${listing.description}, ${listing.address}`}</p>
-        </div>
+        {listings.map(listing => (
+          <Link key={listing.id} to={`/listing/${listing.id}`}>
+            <div key={listing.id} className={`listingCard-${listing.id}`}>
+              <img></img>
+              <p>
+                Description: {listing.description}
+              </p>
+              <p>
+                Address: {listing.address}
+              </p>
+              <p>
+               Boat Type:  {listing.boatType}
+              </p>
+              <p>
+               Price per night: {listing.price}
+                </p>
+              <p>
+                Number of Guests: {listing.numOfGuest}
+                </p>
+            </div>
           </Link>
-      ))}
-    </div>
+        ))}
+      </div>
     </>
 
   )

@@ -43,8 +43,13 @@ router.put('/listings/:listingId', asyncHandler(async(req, res)=>{
   })
   return res.json(updatedListing)
 }))
+
 router.delete('/listings/:id', asyncHandler(async (req,res)=>{
-  return await Listing.destroy({where: {id: req.params.id}})
+  const listing = await Listing.findByPk(req.params.id)
+  await listing.destroy()
+  res.status(204).end()
+
+
 }))
 
 

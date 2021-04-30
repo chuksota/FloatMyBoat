@@ -15,10 +15,6 @@ module.exports = {
         type: Sequelize.STRING(3000),
         allowNull: false
       },
-      userId: {
-        type: Sequelize.INTEGER,
-        references: {model: 'Users'},
-      },
       listingId: {
         type: Sequelize.INTEGER,
         references: {model: 'Listings'},

@@ -1,6 +1,6 @@
-
+import {csrfFetch} from './csrf'
 const LOAD_USER = 'profile/LOAD_USER'
-
+const DELETE_LISTING = 'listings/DELETE_LISTINGS'
 
 const loadUser = userInfo => {
   return {
@@ -8,7 +8,18 @@ const loadUser = userInfo => {
     userInfo
   }
 }
+const deleteListing = listingId=> ({
+  type: DELETE_LISTING,
+  listingId
+})
 
+export const deleteAListing = (id) => async dispatch => {
+  const response = await csrfFetch(`/api/destinations/listings/${id}`, {
+    method: 'DELETE'
+  })
+  if(!response.ok)throw response;
+    dispatch(deleteListing(id))
+}
 
 export const getUserInformation = (id) => async dispatch => {
   const response = await fetch(`/api/users/${id}`)
@@ -29,6 +40,15 @@ const userReducer = (state = {all: [], current:{}}, action) => {
       })
       newState.all = userInfo
       newState.current = { ...state.current }
+      return newState
+    }
+    case DELETE_LISTING: {
+      const newState = {}
+      newState.all= []
+      newState.current = {}
+      console.log(action)
+      newState.all = state.all.filter(item=> item.id !== action.listingId )
+      console.log(newState)
       return newState
     }
     default:

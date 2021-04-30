@@ -12,7 +12,7 @@ module.exports = (sequelize, DataTypes) => {
   Listing.associate = function (models) {
     Listing.hasMany(models.Review, {
       foreignKey: 'listingId',
-      onDelete: "cascade",
+      onDelete: 'cascade',
       hooks: true
     })
     Listing.belongsTo(models.Destination, { foreignKey: 'destinationId' })

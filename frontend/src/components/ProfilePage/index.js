@@ -4,30 +4,26 @@ import { useEffect , useState} from 'react'
 import { getDestinations } from '../../store/destinations'
 import { NavLink } from 'react-router-dom'
 import { getUserInformation } from '../../store/profile'
-import {deleteAListing} from '../../store/listings'
-import {useHistory} from 'react-router-dom'
 
+import {useHistory} from 'react-router-dom'
+import Listing from './Listing'
 
 function ProfilePage() {
   const history = useHistory()
   const dispatch = useDispatch()
-  const destinations = useSelector(state => state.destination)
+  // const destinations = useSelector(state => state.destination)
   const user = useSelector(state => state.session.user)
   const userInfo = useSelector(state => state.userInfo.all)
-  const [clicked, setClicked] = useState(false)
 
-  const deleteListing =async (id)=> {
-    dispatch(deleteAListing(id))
-  }
 
-  const goToReviews=(id)=>{
-    history.push(`listing/${id}`)
-  }
+
+
+
 
   useEffect(() => {
-    dispatch(getDestinations())
+    // dispatch(getDestinations())
     dispatch(getUserInformation(user.id))
-  }, [dispatch, user.id])
+  }, [dispatch])
 
   return (
     <main className="index__dashboard">
@@ -38,24 +34,21 @@ function ProfilePage() {
       <div className='profile_content'>
       <div className='all__listings'>
         <h3 className='headings'> Your current listings</h3>
-        {userInfo.map(listing => (
-          <div key={listing.id} className={`dashboard__listingCard`}>
-            <p>{listing.description}</p>
-           <button className='seeReviewsButton' onClick={()=>goToReviews(listing.id)}key={listing.id}>See reviews</button>
-           <button className='deleteReviewsButton' onClick={()=> {deleteListing(listing.id)}}>Delete Listing</button>
-          </div>
-        ))}
+        {
+        userInfo.map(listing =>
+          <Listing key={listing.id} listing={listing}/>
+        )}
       </div>
       <div className='about'>
       <h3 className='headings'>Destinations</h3>
-      {
+      {/* {
         destinations.map(destination => (
           <NavLink key={destination.id} to={`/destinations/${destination.id}/listings`}>
             <section key={destination.id} className={`dashboardLocationCards`}>
               {`${destination.city}, ${destination.country}`}
             </section>
           </NavLink>
-        ))}
+        ))} */}
         </div>
         </div>
     </main>

@@ -4,7 +4,7 @@ import {csrfFetch} from './csrf'
 const CREATE_LISTING = 'listings/CREATE_LISTINGS'
 const LOAD_LISTINGS = 'listings/LOAD_LISTINGS'
 const GET_DETAILS = 'listings/GET_DETAILS'
-const DELETE_LISTING = 'listings/DELETE_LISTINGS'
+
 
 const loadListings = listings => ({
   type: LOAD_LISTINGS,
@@ -21,10 +21,7 @@ const createListing = newListing => ({
   newListing
 })
 
-const deleteListing = listingId=> ({
-  type: DELETE_LISTING,
-  listingId
-})
+
 
 export const createNewListing = addedListing => async dispatch => {
   const response = await csrfFetch(`/api/destinations/listings`, {
@@ -56,13 +53,7 @@ export const getListings = (id) => async dispatch =>{
   }
 }
 
-export const deleteAListing = (id) => async dispatch => {
-  const response = await csrfFetch(`/api/destinations/listings/${id}`, {
-    method: 'DELETE'
-  })
-  if(!response.ok)throw response;
-    dispatch(deleteListing())
-}
+
 
 const listingsReducer = (state = {all: [], current:{}} , action) => {
   switch(action.type){
@@ -97,12 +88,7 @@ const listingsReducer = (state = {all: [], current:{}} , action) => {
       newState.current = action.details
       return newState
     }
-    case DELETE_LISTING: {
-      let newCurrent = state.current
-      let currentAll = [...state.all]
-      delete newCurrent[action.listing.id]
-      return currentAll
-    }
+
     default:
       return state
   }

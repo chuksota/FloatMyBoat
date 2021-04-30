@@ -8,7 +8,7 @@ import ProfilePage from './components/ProfilePage'
 import DestinationsPage from './components/Destinations'
 import DestinationListings from './components/DestinationListings'
 import ListingDetails from './components/ListingDetails'
-import HomePage from './components/HomePage'
+import SplashPage from './components/SplashPage'
 import Footer from './components/Footer'
 function App() {
   const dispatch = useDispatch();
@@ -23,7 +23,7 @@ function App() {
       {isLoaded && (
     <Switch>
       <Route exact path='/'>
-        <HomePage/>
+        <SplashPage/>
       </Route>
       <Route path='/signup'>
       <SignupFormPage/>
@@ -45,7 +45,7 @@ function App() {
       </Route>
     </Switch>
       )}
-      <Footer/>
+      {/* <Footer/> */}
     </>
   );
 }

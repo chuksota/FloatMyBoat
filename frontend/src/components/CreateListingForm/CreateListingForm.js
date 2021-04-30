@@ -1,21 +1,24 @@
 import { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { createNewListing } from '../../store/listings'
 
-const CreateNewListing = ({user, id}) => {
+const CreateNewListing = (props) => {
+  const user = useSelector(state=> state.session.user)
+  console.log(props.id)
   const dispatch = useDispatch()
   const [description, setDescription] = useState("")
   const [boatType, setBoatType] = useState("")
-  const [price, setPrice] = useState(0)
+  const [price, setPrice] = useState('')
   const [imageUrl, setImageUrl] = useState("")
-  const [numOfGuests, setNumOfGuests] = useState(0)
+  const [numOfGuests, setNumOfGuests] = useState('')
+  const [address, setAddress] = useState('')
 
   const resetFields = () => {
       setDescription('')
       setBoatType('')
-      setPrice(0)
+      setPrice('')
       setImageUrl('')
-      setNumOfGuests(0)
+      setNumOfGuests('')
   }
 
   const handleSubmit = async (e)=>{
@@ -23,10 +26,11 @@ const CreateNewListing = ({user, id}) => {
       const newListing = {
         description,
         boatType,
-        price,
+        price: Number.parseInt(price),
         imageUrl,
-        numOfGuests,
-        destinationId: id,
+        numOfGuests: Number.parseInt(numOfGuests),
+        address,
+        destinationId: props.id,
         userId: user.id
       }
       await dispatch(createNewListing(newListing))
@@ -55,7 +59,11 @@ const CreateNewListing = ({user, id}) => {
           type='number'
           value={numOfGuests}
           onChange={e=> setNumOfGuests(e.target.value)}/>
-
+          <input
+          type='text'
+          value={address}
+          onChange={e=>setAddress(e.target.value)}
+          placeholder='Give us an address'/>
           <input
           type='text'
           value={imageUrl}

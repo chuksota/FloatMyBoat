@@ -10,6 +10,7 @@ const DestinationListings = () => {
   const { destinationId } = useParams()
   const listings = useSelector(state => state.destinationListings.all)
   const sessionUser = useSelector(state=> state.session.user)
+  console.log(sessionUser)
   let userForm;
   if(sessionUser){
     userForm = (
@@ -30,10 +31,11 @@ const DestinationListings = () => {
     <h1>Pick your next adventure!</h1>
     {userForm}
     <div className='listings__container'>
+
       {listings.map(listing => (
         <Link key={listing.id}to={`/listing/${listing.id}`}>
-        <div key={listing.id} className={`listingCard`}>
-        {`${listing.description}, ${listing.address}`}
+        <div key={listing.id} className={`listingCard-${listing.id}`}>
+       <p> {`${listing.description}, ${listing.address}`}</p>
         </div>
           </Link>
       ))}

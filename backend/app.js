@@ -1,6 +1,7 @@
 const express = require('express');
 const morgan = require('morgan');
 const cors = require('cors');
+const bodyParser = require('body-parser')
 const csurf = require('csurf');
 const helmet = require('helmet');
 const cookieParser = require('cookie-parser');
@@ -13,7 +14,8 @@ const app = express()
 
 app.use(morgan('dev'))
 app.use(cookieParser())
-app.use(express.json())
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 if (!isProduction) {
   // enable cors only in development
   app.use(cors());
@@ -33,7 +35,7 @@ app.use(
     },
   })
   );
-  
+
   app.use(routes);
 
   app.use((_req, _res, next) => {

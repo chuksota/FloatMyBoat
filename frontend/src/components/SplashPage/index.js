@@ -1,7 +1,7 @@
 import './HomePage.css'
 
 
-const HomePage = () => {
+const SplashPage = () => {
   return(
     <div>
       I will be the splash page
@@ -9,4 +9,4 @@ const HomePage = () => {
   )
 }
 
-export default HomePage
+export default SplashPage

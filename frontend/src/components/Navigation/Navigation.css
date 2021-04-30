@@ -3,7 +3,7 @@
   box-sizing: border-box;
   border: 2px solid black;
   box-shadow: black;
-  justify-content:flex-end;
+  justify-content: space-between;
   height: 50px;
   box-shadow: 5px 5px 5px  rgb(0,0,0, .2);
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -16,4 +16,11 @@
 .nav-links{
   color:black;
   padding: 10px;
+  justify-content: flex-start;
+}
+
+.buttons{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
 }

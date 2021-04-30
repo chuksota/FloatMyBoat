@@ -14,7 +14,7 @@ function DestinationsPage() {
   return (
     <main>
         {destinations.map(destination => (
-          <NavLink to={`/destinations/${destination.id}/listings`}>
+          <NavLink key={destination.id} to={`/destinations/${destination.id}/listings`}>
             <div key={destination.id} className={`locationCard-${destination.id}`}>
               {`${destination.city}, ${destination.country}`}
             </div>

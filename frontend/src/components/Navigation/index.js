@@ -28,10 +28,10 @@ function Navigation({ isLoaded }){
 
   return (
     <div className='nav-bar'>
-      <div>
-        <NavLink  className='nav-links' exact to="/">Home</NavLink>
-        {isLoaded && sessionLinks}
+      <div className='nav-links'>
+        <NavLink exact to="/">Float My Boat</NavLink>
       </div>
+        <div className='buttons'>{isLoaded && sessionLinks}</div>
     </div>
   );
 }

@@ -1,15 +1,15 @@
 import { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+
 import { createReview } from '../../store/reviews';
 
 import './CreateReviewForm.css';
 
-const CreateReviewForm = ({listingId, user}) => {
-
+const CreateReviewForm = ({id}) => {
+  console.log(id)
   const dispatch = useDispatch();
-
   const [review, setReview] = useState("");
-
+  const sessionUser = useSelector(state=>state.session.user)
   const resetFields = () => {
     setReview("")
     return
@@ -20,8 +20,8 @@ const CreateReviewForm = ({listingId, user}) => {
 
     const newReview = {
       review,
-      listingId,
-      userId: user.id
+      listingId: id,
+      userId: sessionUser.id
 
     };
     await dispatch(createReview(newReview))

@@ -44,7 +44,7 @@ router.put('/listings/:listingId', asyncHandler(async(req, res)=>{
   return res.json(updatedListing)
 }))
 router.delete('/listings/:id', asyncHandler(async (req,res)=>{
-  return await Listing.delete({where: {id: req.params.id}})
+  return await Listing.destroy({where: {id: req.params.id}})
 }))
 
 

@@ -1,29 +1,42 @@
 .index__dashboard{
   display: flex;
   height: fit-content;
-  width: 100vh;
+  width: 100%;
   flex-direction: row;
   background-color: #F1EFEA;
   margin: 0 auto;
   margin-top: 10px;
   font-family: Arial, Helvetica, sans-serif;
+  justify-content: center;
 }
 
-
+.headings{
+  box-sizing: border-box;
+  border-bottom: 1px solid rgba(0,0,0,0.15);
+  margin-left: 5px;
+  margin-right: 5px;
+}
 
 .profile_info{
-  margin: 0 40px;
+  display: flex;
+  margin: 10px 10px 20px 10px;
   padding: 0 0 35px 0;
   border-bottom: 1px solid #e6e6e6;
   box-sizing: border-box;
   background-color: #fff;
+  box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.15);
+  width: 500px;
+justify-content: center;
 }
 
 .profile_content{
-padding-right: 10px;
-display: flex;
-flex-direction: column;
-margin-bottom: 30px;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+  margin-right: 10px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 30px;
+  width: 1000px;
 
 }
 
@@ -32,17 +45,27 @@ margin-bottom: 30px;
     border-radius: 2px;
     box-sizing: border-box;
     box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.15);
+    margin-bottom: 10px;
+    margin-top: 10px;
 }
 .about{
   height: 100%;
   padding-bottom: 5px;
   background-color: #fff;
+  box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.15);
 }
 .dashboardLocationCards{
   box-sizing: border-box;
   height: 50px;
   width: 100%;
+  margin: 30px 30px 30px 30px;
 }
+
+.dashboard__listingCard{
+  margin: 30px 30px 30px 30px;
+}
+
+
 /* .dashboard{
   padding-top: 20px;
   display: grid;

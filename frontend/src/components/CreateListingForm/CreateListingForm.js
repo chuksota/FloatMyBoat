@@ -2,9 +2,8 @@ import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { createNewListing } from '../../store/listings'
 
-const CreateNewListing = (props) => {
+const CreateNewListing = ({id}) => {
   const user = useSelector(state=> state.session.user)
-  console.log(props.id)
   const dispatch = useDispatch()
   const [description, setDescription] = useState("")
   const [boatType, setBoatType] = useState("")
@@ -19,6 +18,7 @@ const CreateNewListing = (props) => {
       setPrice('')
       setImageUrl('')
       setNumOfGuests('')
+      setAddress('')
   }
 
   const handleSubmit = async (e)=>{
@@ -30,7 +30,7 @@ const CreateNewListing = (props) => {
         imageUrl,
         numOfGuests: Number.parseInt(numOfGuests),
         address,
-        destinationId: props.id,
+        destinationId: id,
         userId: user.id
       }
       await dispatch(createNewListing(newListing))

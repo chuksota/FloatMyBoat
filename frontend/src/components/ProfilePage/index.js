@@ -5,14 +5,18 @@ import { getDestinations } from '../../store/destinations'
 import { NavLink } from 'react-router-dom'
 import { getUserInformation } from '../../store/profile'
 import {deleteAListing} from '../../store/listings'
-
+import {useHistory} from 'react-router-dom'
 function ProfilePage() {
+  const history = useHistory()
   const dispatch = useDispatch()
   const destinations = useSelector(state => state.destination)
   const user = useSelector(state => state.session.user)
   const userInfo = useSelector(state => state.userInfo.all)
   const deleteListing =async (id)=> {
     dispatch(deleteAListing(id))
+  }
+  const goToReviews=(id)=>{
+    history.push(`listing/${id}`)
   }
   useEffect(() => {
     dispatch(getDestinations())
@@ -31,8 +35,8 @@ function ProfilePage() {
         {userInfo.map(listing => (
           <div key={listing.id} className={`dashboard__listingCard`}>
             <p>{listing.description}</p>
-           <button> <NavLink key={listing.id} className='see-reviews' to={`/listing/${listing.id}`}>See reviews</NavLink></button>
-           <button onClick={e=> deleteAListing(listing.id)}>Delete Listing</button>
+           <button  onClick={()=>goToReviews(listing.id)}key={listing.id} className='see-reviews'>See reviews</button>
+           <button onClick={()=> deleteListing(listing.id)}>Delete Listing</button>
           </div>
         ))}
       </div>

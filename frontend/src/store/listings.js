@@ -97,6 +97,9 @@ const listingsReducer = (state = {all: [], current:{}} , action) => {
       newState.current = action.details
       return newState
     }
+    case DELETE_LISTING: {
+      
+    }
     default:
       return state
   }

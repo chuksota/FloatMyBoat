@@ -8,6 +8,7 @@ import CreateReviewForm from '../CreateReviewForm'
 import {NavLink} from 'react-router-dom'
 function ListingDetails(){
   const {id} = useParams()
+  console.log(id)
   const dispatch = useDispatch()
   const details = useSelector(state=> state.destinationListings.current)
   const reviews = useSelector(state=> state.reviews.all )

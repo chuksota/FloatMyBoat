@@ -7,8 +7,8 @@ import CreateReviewForm from './CreateReviewForm';
 
 function CreateListingModal() {
   const [showModal, setShowModal] = useState(false);
-  const {listingId} = useParams()
-  console.log(listingId)
+  const {id} = useParams()
+
   return (
     <>
       <div className="login-button">
@@ -16,7 +16,7 @@ function CreateListingModal() {
       </div>
       {showModal && (
         <Modal onClose={() => setShowModal(false)}>
-          <CreateReviewForm id={listingId} />
+          <CreateReviewForm id={id} />
         </Modal>
       )}
     </>

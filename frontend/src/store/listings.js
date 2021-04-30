@@ -60,9 +60,8 @@ export const deleteAListing = (id) => async dispatch => {
   const response = await csrfFetch(`/api/destinations/listings/${id}`, {
     method: 'DELETE'
   })
-  if(response.ok){
+  if(!response.ok)throw response;
     dispatch(deleteListing())
-  }
 }
 
 const listingsReducer = (state = {all: [], current:{}} , action) => {

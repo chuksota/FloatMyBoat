@@ -1,6 +1,6 @@
 import './profilePage.css'
 import { useDispatch, useSelector } from 'react-redux'
-import { useEffect } from 'react'
+import { useEffect , useState} from 'react'
 import { getDestinations } from '../../store/destinations'
 import { NavLink } from 'react-router-dom'
 import { getUserInformation } from '../../store/profile'
@@ -14,6 +14,7 @@ function ProfilePage() {
   const destinations = useSelector(state => state.destination)
   const user = useSelector(state => state.session.user)
   const userInfo = useSelector(state => state.userInfo.all)
+  const [clicked, setClicked] = useState(false)
 
   const deleteListing =async (id)=> {
     dispatch(deleteAListing(id))
@@ -41,7 +42,7 @@ function ProfilePage() {
           <div key={listing.id} className={`dashboard__listingCard`}>
             <p>{listing.description}</p>
            <button className='seeReviewsButton' onClick={()=>goToReviews(listing.id)}key={listing.id}>See reviews</button>
-           <button className='deleteReviewsButton' onClick={()=> deleteListing(listing.id)}>Delete Listing</button>
+           <button className='deleteReviewsButton' onClick={()=> {deleteListing(listing.id)}}>Delete Listing</button>
           </div>
         ))}
       </div>

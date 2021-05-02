@@ -18,7 +18,9 @@ module.exports = {
     boatType: 'Dingy',
     price: 60,
     destinationId: 1,
-    userId: 1
+    userId: 1,
+    numOfGuests: 3,
+    imageUrl: 'https://floatyourboatimages.s3.us-east-2.amazonaws.com/Dingy+picture.jpg'
   },
   {
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
@@ -26,7 +28,9 @@ module.exports = {
     boatType: 'Speed boat',
     price: 150,
     destinationId: 1,
-    userId: 1
+    userId: 1,
+    numOfGuests: 10,
+    imageUrl: 'https://floatyourboatimages.s3.us-east-2.amazonaws.com/speedboat1.jpg'
   },
   {
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
@@ -34,7 +38,9 @@ module.exports = {
     boatType: 'Yacht',
     price: 300,
     destinationId: 1,
-    userId: 1
+    userId: 1,
+    numOfGuests: 100,
+    imageUrl: 'https://floatyourboatimages.s3.us-east-2.amazonaws.com/yacht1.jpg'
   },
   {
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
@@ -42,7 +48,9 @@ module.exports = {
     boatType: 'Yacht',
     price: 600,
     destinationId: 1,
-    userId: 1
+    userId: 1,
+    numOfGuests: 60,
+    imageUrl: 'https://floatyourboatimages.s3.us-east-2.amazonaws.com/yacht2.jpg'
   },
   {
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
@@ -50,7 +58,9 @@ module.exports = {
     boatType: 'Row Boat',
     price: 35,
     destinationId: 1,
-    userId: 1
+    userId: 1,
+    numOfGuests: 2,
+    imageUrl: 'https://floatyourboatimages.s3.us-east-2.amazonaws.com/rowboat1.jpg'
   },
   {
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
@@ -58,63 +68,79 @@ module.exports = {
     boatType: 'Row Boat',
     price: 35,
     destinationId: 1,
-    userId: 1
+    userId: 1,
+    numOfGuests: 2,
+    imageUrl: 'https://floatyourboatimages.s3.us-east-2.amazonaws.com/rowboat2.jpg'
   },
 {
   description: 'Curabitur ultricies volutpat nibh',
   address: '555 Smith Ave',
   boatType: "Sail Boat",
   price: 150,
-  destinationId: 2,
-  userId: 2
+  destinationId: 1,
+  userId: 2,
+  numOfGuests: 10,
+  imageUrl: 'https://floatyourboatimages.s3.us-east-2.amazonaws.com/sailboat3.jpg'
 },
 {
   description: 'Curabitur ultricies volutpat nibh',
   address: '441 6th Street',
   boatType: "Yacht",
   price: 100000,
-  destinationId: 2,
-  userId: 2
+  destinationId: 1,
+  userId: 2,
+  numOfGuests: 500,
+  imageUrl: 'https://floatyourboatimages.s3.us-east-2.amazonaws.com/Luxury-yacht-sales-brokerage-scaled.jpg'
 },
 {
   description: 'Curabitur ultricies volutpat nibh',
   address: '97 North Bowman Ave.',
   boatType: "Dingy",
   price: 10,
-  destinationId: 2,
-  userId: 2
+  destinationId: 1,
+  userId: 2,
+  numOfGuests: 4,
+  imageUrl: 'https://floatyourboatimages.s3.us-east-2.amazonaws.com/Dingypicture.jpg'
 },
 {
   description: 'Curabitur ultricies volutpat nibh',
   address: '9058 East Linda St',
-  boatType: "Dingy",
+  boatType: "Speed boat",
   price: 20,
-  destinationId: 2,
-  userId: 2
+  destinationId: 1,
+  userId: 2,
+  numOfGuests: 50,
+  imageUrl:'https://floatyourboatimages.s3.us-east-2.amazonaws.com/speedboat17.jpg'
 },
 {
   description: 'Curabitur ultricies volutpat nibh',
   address: '542 Hillcrest Street',
   boatType: "Row Boat",
   price: 5,
-  destinationId: 2,
-  userId: 2
+  destinationId: 1,
+  userId: 2,
+  numOfGuests: 10,
+  imageUrl: 'https://floatyourboatimages.s3.us-east-2.amazonaws.com/rowboat6.jpg'
 },
 {
   description: 'Curabitur ultricies volutpat nibh',
   address: '8109 Prairie Lane',
   boatType: "Yacht",
   price: 300,
-  destinationId: 2,
-  userId: 2
+  destinationId: 1,
+  userId: 2,
+  numOfGuests: 250,
+  imageUrl: 'https://floatyourboatimages.s3.us-east-2.amazonaws.com/yacht3.jpg'
 },
 {
   description: 'Curabitur ultricies volutpat nibh',
   address: '944 SE. Saxton Dr.',
   boatType: "Row Boat",
   price: 300,
-  destinationId: 2,
-  userId: 2
+  destinationId: 1,
+  userId: 2,
+  numOfGuests: 2,
+  imageUrl: 'https://floatyourboatimages.s3.us-east-2.amazonaws.com/rowboat10.jpg'
 },
 {
   description: 'Curabitur ultricies volutpat nibh',

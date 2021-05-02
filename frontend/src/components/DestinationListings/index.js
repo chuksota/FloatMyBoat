@@ -35,7 +35,7 @@ const DestinationListings = () => {
         {listings.map(listing => (
           <Link key={listing.id} to={`/listing/${listing.id}`}>
             <div key={listing.id} className={`listingCard-${listing.id}`}>
-              <img></img>
+              <img src={listing.imageUrl} className="listingPictures"></img>
               <p>
                 Description: {listing.description}
               </p>
@@ -46,10 +46,10 @@ const DestinationListings = () => {
                Boat Type:  {listing.boatType}
               </p>
               <p>
-               Price per night: {listing.price}
+               Price per day: {listing.price}
                 </p>
               <p>
-                Number of Guests: {listing.numOfGuest}
+                Number of Guests: {listing.numOfGuests}
                 </p>
             </div>
           </Link>

@@ -6,17 +6,22 @@ import './Destinations.css'
 function DestinationsPage() {
   const dispatch = useDispatch()
   const destinations = useSelector(state => state.destination)
-
+  console.log(destinations)
   useEffect(() => {
     dispatch(getDestinations())
   }, [dispatch])
 
   return (
     <main>
+      <h1 className='header'>More Destinations Coming soon...</h1>
         {destinations.map(destination => (
           <NavLink key={destination.id} to={`/destinations/${destination.id}/listings`}>
             <div key={destination.id} className={`locationCard-${destination.id}`}>
+              <div className='destinationName'>
               {`${destination.city}, ${destination.country}`}
+              <img src={destination.imageUrl} className='destinationImages'>
+              </img>
+              </div>
             </div>
           </NavLink>
         ))}

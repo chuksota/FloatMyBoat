@@ -9,6 +9,7 @@ module.exports = {
         email: 'demo@user.io',
         username: 'Demo-lition',
         hashedPassword: bcrypt.hashSync('password'),
+        profileImageUrl: 'https://floatyourboatimages.s3.us-east-2.amazonaws.com/Demo-lition+profile+pic.jpg'
       },
       {
         email: faker.internet.email(),

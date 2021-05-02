@@ -20,6 +20,9 @@ module.exports = {
       city: {
         type: Sequelize.STRING
       },
+      imageUrl:{
+        type: Sequelize.STRING
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE,

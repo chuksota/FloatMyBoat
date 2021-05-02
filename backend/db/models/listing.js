@@ -6,6 +6,7 @@ module.exports = (sequelize, DataTypes) => {
     price: DataTypes.INTEGER,
     boatType: DataTypes.STRING,
     imageUrl: DataTypes.STRING,
+    numOfGuests: DataTypes.INTEGER,
     destinationId: DataTypes.INTEGER,
     userId: DataTypes.INTEGER
   }, {});

@@ -4,7 +4,8 @@ module.exports = (sequelize, DataTypes) => {
     name: DataTypes.STRING,
     country: DataTypes.STRING,
     state: DataTypes.STRING,
-    city: DataTypes.STRING
+    city: DataTypes.STRING,
+    imageUrl: DataTypes.STRING
   }, {});
   Destination.associate = function(models) {
    Destination.hasMany(models.Listing, {foreignKey: 'destinationId'})

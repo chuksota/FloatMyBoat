@@ -8,12 +8,13 @@ import CreateReviewForm from '../CreateReviewForm'
 import {NavLink} from 'react-router-dom'
 function ListingDetails(){
   const {id} = useParams()
-  console.log(id)
   const dispatch = useDispatch()
   const details = useSelector(state=> state.destinationListings.current)
   const reviews = useSelector(state=> state.reviews.all )
   const sessionUser = useSelector(state=> state.session.user)
-
+  const goBackToListings = () => {
+    
+  }
   useEffect(()=>{
     dispatch(getOneListing(id))
     dispatch(getReviews(id))
@@ -31,17 +32,28 @@ function ListingDetails(){
   }
   return(
     <div>
-
+      <button>Back to Listings</button>
+      <h1>Reviews for:</h1>
+      {reviewForm}
       <div className='listing__details-container'>
+      <img src={details.imageUrl} className="listingPicture"></img>
+        <div>
+          Description: {details.description}
+        </div>
       <div>
       Address: {details.address}
         </div>
       <div>
       Boat Type: {details.boatType}
         </div>
+        <div>
+          Price per day: {details.price}
+        </div>
+        <div>
+          Number of Guests possible: {details.numOfGuests}
+        </div>
       </div>
-      <h1>Reviews</h1>
-      {reviewForm}
+
       <div className='reviews_container'>
         {reviews.map(review => (
           <div key={review.id} className={`review_cards`}>

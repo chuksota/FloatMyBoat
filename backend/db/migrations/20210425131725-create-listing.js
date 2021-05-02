@@ -20,6 +20,9 @@ module.exports = {
         type: Sequelize.STRING(30),
         allowNull: false
       },
+      numOfGuests:{
+        type: Sequelize.INTEGER,
+      },
       imageUrl: {
         type: Sequelize.STRING
       },

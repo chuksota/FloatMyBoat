@@ -40,16 +40,13 @@ const DestinationListings = () => {
                 Description: {listing.description}
               </p>
               <p>
-                Address: {listing.address}
-              </p>
-              <p>
                Boat Type:  {listing.boatType}
               </p>
               <p>
-               Price per day: {listing.price}
+               Price per day: $ {listing.price}
                 </p>
               <p>
-                Number of Guests: {listing.numOfGuests}
+                Number of Passengers: {listing.numOfGuests}
                 </p>
             </div>
           </Link>

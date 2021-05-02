@@ -10,7 +10,6 @@ const CreateNewListing = ({id}) => {
   const [price, setPrice] = useState('')
   const [imageUrl, setImageUrl] = useState("")
   const [numOfGuests, setNumOfGuests] = useState('')
-  const [address, setAddress] = useState('')
 
   const resetFields = () => {
       setDescription('')
@@ -18,7 +17,6 @@ const CreateNewListing = ({id}) => {
       setPrice('')
       setImageUrl('')
       setNumOfGuests('')
-      setAddress('')
   }
 
   const handleSubmit = async (e)=>{
@@ -29,7 +27,6 @@ const CreateNewListing = ({id}) => {
         price: Number.parseInt(price),
         imageUrl,
         numOfGuests: Number.parseInt(numOfGuests),
-        address,
         destinationId: id,
         userId: user.id
       }
@@ -59,11 +56,6 @@ const CreateNewListing = ({id}) => {
           type='number'
           value={numOfGuests}
           onChange={e=> setNumOfGuests(e.target.value)}/>
-          <input
-          type='text'
-          value={address}
-          onChange={e=>setAddress(e.target.value)}
-          placeholder='Give us an address'/>
           <input
           type='text'
           value={imageUrl}

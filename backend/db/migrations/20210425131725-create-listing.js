@@ -26,11 +26,6 @@ module.exports = {
       imageUrl: {
         type: Sequelize.STRING
       },
-      address: {
-        type: Sequelize.STRING(100),
-        unique:true,
-        allowNull: false
-        },
       destinationId: {
         type: Sequelize.INTEGER,
         references: {model: 'Destinations'},

@@ -2,7 +2,6 @@
 module.exports = (sequelize, DataTypes) => {
   const Listing = sequelize.define('Listing', {
     description: DataTypes.STRING,
-    address: DataTypes.STRING,
     price: DataTypes.INTEGER,
     boatType: DataTypes.STRING,
     imageUrl: DataTypes.STRING,

@@ -21,7 +21,7 @@ function ProfilePage() {
   useEffect(() => {
     dispatch(getDestinations())
     dispatch(getUserInformation(user.id))
-  }, [dispatch])
+  }, [dispatch, user.id])
 
   return (
     <main className="index__dashboard">

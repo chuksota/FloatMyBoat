@@ -41,7 +41,7 @@
 
 }
 .userInfo{
-  margin-top: 250px;
+ margin-top: 15rem;
 }
 
 .all__listings{
@@ -68,11 +68,13 @@
 }
 
 .dashboard__listingCard{
-  margin: 30px 30px 30px 30px;
+  margin: 30px 30px 40px 30px;
+  box-sizing: border-box;
+border-bottom: .5px solid grey;
 }
 
 .dashboard__listingCard button{
-  margin: 0px 10px;
+  margin: 0px 10px 5px;
 }
 
 .seeReviewsButton{
@@ -123,4 +125,10 @@
 
 .profileListingPic{
   border-radius: 50%;
+}
+
+.name_and--email{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }

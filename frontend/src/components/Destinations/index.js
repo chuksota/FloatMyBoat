@@ -6,7 +6,6 @@ import './Destinations.css'
 function DestinationsPage() {
   const dispatch = useDispatch()
   const destinations = useSelector(state => state.destination)
-  console.log(destinations)
   useEffect(() => {
     dispatch(getDestinations())
   }, [dispatch])
@@ -20,7 +19,7 @@ function DestinationsPage() {
             <div key={destination.id} className={`locationCard-${destination.id}`}>
               <div className='destinationName'>
               {`${destination.city}, ${destination.country}`}
-              <img src={destination.imageUrl} className='destinationImages'>
+              <img src={destination.imageUrl} className='destinationImages' alt=''>
               </img>
               </div>
             </div>

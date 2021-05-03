@@ -76,3 +76,15 @@
   border-width: thin;
   opacity: 1;
 }
+
+.submit2:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.submit2:hover {
+  background-color: rgb(238, 238, 238);
+  border: solid rgb(190, 190, 190);
+  border-width: thin;
+  opacity: 1;
+}

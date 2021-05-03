@@ -3,15 +3,28 @@ import { useParams } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { useEffect } from 'react'
 import { getReviews } from '../../store/reviews'
+import {deleteReview} from '../../store/reviews'
 import './ListingDetails.css'
 import CreateReviewForm from '../CreateReviewForm'
+
 function ListingDetails(){
   const {id} = useParams()
   const dispatch = useDispatch()
   const details = useSelector(state=> state.destinationListings.current)
   const reviews = useSelector(state=> state.reviews.all )
   const sessionUser = useSelector(state=> state.session.user)
-  
+
+
+
+
+  const deleteAReview = (id) => {
+   let alert = window.confirm("Are you sure you want to delete this review?")
+   if(alert){
+     dispatch(deleteReview(id))
+   }
+  }
+
+
   useEffect(()=>{
     dispatch(getOneListing(id))
     dispatch(getReviews(id))
@@ -32,7 +45,7 @@ function ListingDetails(){
 
 
       <div className='listing__details-container'>
-      <img src={details.imageUrl} className="listingPicture"></img>
+      <img src={details.imageUrl} className="listingPicture" alt=''></img>
         <div>
           Description: {details.description}
         </div>
@@ -46,7 +59,9 @@ function ListingDetails(){
           Number of Passengers: {details.numOfGuests}
         </div>
       </div>
+      <div className='leaveAReview'>
       {reviewForm}
+      </div>
 
       <div className='reviews_container'>
         {reviews.map(review => (
@@ -55,6 +70,9 @@ function ListingDetails(){
             <div className='reviewAuthor'>Author: {review.author} </div>
 
             <div className='reviewText'>Review: {review.review} </div>
+            <div>
+            <button className='delete_review--button' onClick={()=>deleteAReview(review.id)}>Delete This review</button>
+            </div>
           </div>
         ))}
       </div>

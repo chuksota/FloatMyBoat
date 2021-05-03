@@ -1,21 +1,19 @@
 import './profilePage.css'
 import { useDispatch, useSelector } from 'react-redux'
-import { useEffect, useState } from 'react'
+import { useEffect} from 'react'
 import { getDestinations } from '../../store/destinations'
 import { NavLink } from 'react-router-dom'
 import { getUserInformation } from '../../store/profile'
 
-import { useHistory } from 'react-router-dom'
+
 import Listing from './Listing'
 
 function ProfilePage() {
-  const history = useHistory()
   const dispatch = useDispatch()
   const destinations = useSelector(state => state.destination)
   const user = useSelector(state => state.session.user)
   const userInfo = useSelector(state => state.userInfo.all)
 
-  console.log(userInfo)
 
 
   useEffect(() => {
@@ -28,8 +26,10 @@ function ProfilePage() {
       <div className="profile_info">
         <div className='userInfo'>
           <img className='profilePic' alt='' src='https://floatyourboatimages.s3.us-east-2.amazonaws.com/Demo-lition+profile+pic.jpg' />
+          <div className='name_and--email'>
           <p>Username: {user.username} </p>
           <p>Email: {user.email}</p>
+          </div>
         </div>
       </div>
 

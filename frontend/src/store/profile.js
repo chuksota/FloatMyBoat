@@ -41,13 +41,12 @@ const userReducer = (state = {all: [], current:{}}, action) => {
       newState.current = { ...state.current }
       return newState
     }
+
     case DELETE_LISTING: {
       const newState = {}
       newState.all= []
       newState.current = {}
-      console.log(action)
       newState.all = state.all.filter(item=> item.id !== action.listingId )
-      console.log(newState)
       return newState
     }
     default:

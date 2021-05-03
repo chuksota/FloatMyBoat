@@ -9,8 +9,8 @@ function CreateListingModal() {
   const {destinationId} = useParams()
   return (
     <>
-      <div className="login-button">
-        <button onClick={() => setShowModal(true)}>Create a new listing</button>
+      <div >
+        <button className="create_listing-button" onClick={() => setShowModal(true)}>Create a new listing</button>
       </div>
       {showModal && (
         <Modal onClose={() => setShowModal(false)}>

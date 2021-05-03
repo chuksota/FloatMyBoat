@@ -25,3 +25,16 @@
   margin-bottom: 10px;
 }
 
+.destination_listing--heading{
+  display: flex;
+  justify-content: center;
+}
+
+.create_listing--modal{
+  display: flex;
+  justify-content: center;
+}
+
+.heading{
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}

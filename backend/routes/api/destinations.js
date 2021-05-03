@@ -48,8 +48,6 @@ router.delete('/listings/:id', asyncHandler(async (req,res)=>{
   const listing = await Listing.findByPk(req.params.id)
   await listing.destroy()
   res.status(204).end()
-
-
 }))
 
 

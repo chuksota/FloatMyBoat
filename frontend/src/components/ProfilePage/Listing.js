@@ -1,7 +1,6 @@
 import {useDispatch} from 'react-redux'
 import {useHistory} from 'react-router-dom'
 import {deleteAListing} from '../../store/profile'
-import CreateListingForm from '../CreateListingForm'
 const Listing = ({listing}) => {
   const dispatch = useDispatch()
   const history = useHistory()
@@ -18,7 +17,7 @@ const Listing = ({listing}) => {
   }
   return (
     <div className={`dashboard__listingCard`}>
-      <img className='profileListingPic' src={listing.imageUrl}/>
+      <img className='profileListingPic' src={listing.imageUrl} alt=''/>
     <p>{listing.description}</p>
    <button className='seeReviewsButton' onClick={()=>goToReviews(listing.id)}>See reviews</button>
    <button className='deleteReviewsButton' onClick={()=> {deleteListingConfirmation(listing.id)}}>Delete Listing</button>

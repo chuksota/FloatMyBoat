@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { useDispatch } from 'react-redux';
 import * as sessionActions from '../../store/session';
 import {useHistory} from 'react-router-dom'
-import ProfilePage from '../ProfilePage'
 function ProfileButton({ user }) {
   const history = useHistory()
   const dispatch = useDispatch();
@@ -38,16 +37,23 @@ function ProfileButton({ user }) {
 
   return (
     <>
-      <button onClick={openMenu} className='profile-button'>
-        <i className="fas fa-bars" />
+      <button onClick={openMenu} className="profile-button">
+        <div className="icons">
+            <div id="bars">
+            <i className="fas fa-bars"></i>
+            </div>
+            <div id="user">
+            <i className="fas fa-user-circle" />
+            </div>
+        </div>
       </button>
       {showMenu && (
         <ul className="profile-dropdown">
-          <li>
-            <button onClick={logout}>Log Out</button>
-          </li>
+          <li>{user.username}</li>
+          <li>{user.email}</li>
           <li>
             <button onClick={showProfilePage}>Profile</button>
+            <button onClick={logout}>Log Out</button>
           </li>
         </ul>
       )}

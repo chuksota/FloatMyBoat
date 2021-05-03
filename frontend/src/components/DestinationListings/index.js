@@ -10,7 +10,6 @@ const DestinationListings = () => {
   const { destinationId } = useParams()
   const listings = useSelector(state => state.destinationListings.all)
   const sessionUser = useSelector(state => state.session.user)
-  console.log(sessionUser)
   let userForm;
   if (sessionUser) {
     userForm = (
@@ -28,14 +27,18 @@ const DestinationListings = () => {
 
   return (
     <>
-      <h1 className='heading'>Pick your next adventure!</h1>
+    <div className='destination_listing--heading'>
+      <h1 className='heading'>Choose a vessel</h1>
+      </div>
+      <div className='create_listing--modal'>
       {userForm}
+      </div>
       <div className='listings__container'>
 
         {listings.map(listing => (
           <Link key={listing.id} to={`/listing/${listing.id}`}>
             <div key={listing.id} className={`listingCard-${listing.id}`}>
-              <img src={listing.imageUrl} className="listingPictures"></img>
+              <img src={listing.imageUrl} className="listingPictures" alt=''></img>
               <p>
                 Description: {listing.description}
               </p>

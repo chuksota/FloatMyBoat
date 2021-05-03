@@ -1,5 +1,4 @@
 import './HomePage.css'
-import Footer from '../Footer'
 
 const SplashPage = () => {
   return(

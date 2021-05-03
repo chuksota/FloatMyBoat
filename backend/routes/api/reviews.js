@@ -22,6 +22,11 @@ router.post('/', asyncHandler(async(req, res)=>{
   return res.json(newReview)
 }))
 
+router.delete('/:id', asyncHandler(async(req,res)=>{
+  const review = await Review.findByPk(req.params.id)
+  await review.destroy()
+  res.status(204).end()
+}))
 
 
 module.exports = router

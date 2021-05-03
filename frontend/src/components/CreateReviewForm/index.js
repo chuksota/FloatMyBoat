@@ -11,9 +11,8 @@ function CreateListingModal() {
 
   return (
     <>
-      <div className="login-button">
-        <button onClick={() => setShowModal(true)}>Leave a review!</button>
-      </div>
+
+        <button className="login-button" onClick={() => setShowModal(true)}>Leave a review!</button>
       {showModal && (
         <Modal onClose={() => setShowModal(false)}>
           <CreateReviewForm id={id} />

@@ -21,10 +21,10 @@ height:100%;
 }
 
 .review_cards{
-  color:black;
   display: flex;
+  color:black;
   font-family: Georgia, 'Times New Roman', Times, serif;
-  height: 250px;
+  height: 15em;
   box-sizing: border-box;
   box-shadow: 3px 3px 3px 3px rgba(0,0,0, .4);
   width: auto;
@@ -38,4 +38,35 @@ height:100%;
   width:10em  ;
   height: 15em;
   object-fit: contain
+}
+
+.leaveAReview{
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 1em;
+  margin-bottom: 0;
+}
+
+.delete_review--button{
+  display: flex;
+  font-size: 18px;
+  background-color: red;
+  opacity: 0.8;
+  color: white;
+  border: none;
+  margin-top: 3rem;
+  font-weight: bold;
+  align-self: flex-end;
+  padding-top: 0.3rem;
+  padding-bottom: 0.3rem;
+  padding-right: 0.7rem;
+  padding-left: 0.7rem;
+  border-radius: 0.4rem;
+  transition: opacity 0.3s;
+
+}
+
+.delete_review--button:hover{
+  opacity: 1;
+  cursor: pointer;
 }

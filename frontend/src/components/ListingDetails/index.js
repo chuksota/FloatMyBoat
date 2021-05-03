@@ -5,7 +5,6 @@ import { useEffect } from 'react'
 import { getReviews } from '../../store/reviews'
 import {deleteReview} from '../../store/reviews'
 import './ListingDetails.css'
-import CreateReviewForm from '../CreateReviewForm'
 import CreateReviewModal from '../CreateReviewForm/index'
 function ListingDetails(){
   const {id} = useParams()
@@ -66,11 +65,9 @@ function ListingDetails(){
       <div className='reviews_container'>
         {reviews.map(review => (
           <div key={review.id} className={`review_cards`}>
-
-            <div className='reviewAuthor'>Author: {review.author} </div>
-
-            <div className='reviewText'>Review: {review.review} </div>
-            <button className='delete_review--button' onClick={()=>deleteAReview(review.id)}>Delete This review</button>
+            <div key={review.author}className='reviewAuthor'>Author: {review.author} </div>
+            <div key={review.description} className='reviewText'>Review: {review.review} </div>
+            <button key={review} className='delete_review--button' onClick={()=>deleteAReview(review.id)}>Delete This review</button>
           </div>
         ))}
       </div>

@@ -19,6 +19,7 @@ function LoginForm() {
   };
 
   return (
+    <>
     <form  className='LoginForm' onSubmit={handleSubmit}>
       <ul>
         {errors.map((error, idx) => (
@@ -47,6 +48,8 @@ function LoginForm() {
       </label>
       <button  className='login_button'type="submit">Log In</button>
     </form>
+    <p className='login_labels'>Don't have an account? <a href='/signup'>Sign up here.</a></p>
+      </>
   );
 }
 

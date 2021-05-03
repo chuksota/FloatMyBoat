@@ -10,7 +10,7 @@ const CreateReviewForm = ({id}) => {
   const dispatch = useDispatch();
   const [review, setReview] = useState("");
   const [author, setAuthor] = useState("")
-  
+
   const resetFields = () => {
     setReview("")
     setAuthor('')

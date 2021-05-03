@@ -47,7 +47,6 @@ const reviewsReducer = (state = {all: [], current:{}} , action) => {
     case LOAD_REVIEWS: {
       const newState = {}
       const allReviews = []
-      console.log(action.reviews)
       action.reviews.forEach(review=>{
         allReviews.push(review)
       })

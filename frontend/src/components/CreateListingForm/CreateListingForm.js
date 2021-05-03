@@ -37,11 +37,13 @@ const CreateNewListing = ({id}) => {
     <div>
       <form className='createListingForm' onSubmit={handleSubmit}>
         <textarea
+        className='create_list--inputs'
         value={description}
         onChange={e=> setDescription(e.target.value)}
         type='text'
         placeholder='We want to know about your beautiful boat!' />
-        <select value={boatType} onChange={e=>setBoatType(e.target.value)}>
+        <select  className='create_list--inputs' value={boatType} onChange={e=>setBoatType(e.target.value)}>
+          <option>Boat Type</option>
           <option>Yacht</option>
           <option>Row Boat</option>
           <option>Dingy</option>
@@ -51,17 +53,24 @@ const CreateNewListing = ({id}) => {
           type='number'
           value={price}
           onChange={e=> setPrice(e.target.value)}
-          placeholder="How much per day?" />
+          placeholder="How much per day?"
+          className='create_list--inputs'
+          />
           <input
           type='number'
           value={numOfGuests}
-          onChange={e=> setNumOfGuests(e.target.value)}/>
+          onChange={e=> setNumOfGuests(e.target.value)}
+          placeholder="How many passengers?"
+          className='create_list--inputs'
+          />
           <input
           type='text'
           value={imageUrl}
           onChange={e=>setImageUrl(e.target.value)}
-          placeholder='Upload a picture of your boat!'/>
-          <button type='submit'>Create new listing</button>
+          placeholder='Upload a picture of your boat!'
+          className='create_list--inputs'
+          />
+          <button className='create_list--button'type='submit'>Create new listing</button>
       </form>
     </div>
   )

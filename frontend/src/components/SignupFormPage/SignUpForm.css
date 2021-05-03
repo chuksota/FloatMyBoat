@@ -13,6 +13,7 @@
   font-weight: 600;
   font-size: 2rem;
   padding-top: 1rem;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 .signup-fields {
   display: flex;

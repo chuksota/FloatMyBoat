@@ -76,16 +76,46 @@
 }
 
 .seeReviewsButton{
-  background-color: lightblue;
-  border-radius: 5px;
+  font-size: 18px;
+  background-color: #04009a;
+  opacity: 0.8;
+  color: white;
+  border: none;
+  font-weight: bold;
+  margin-top: 1rem;
+  padding-top: 0.3rem;
+  padding-bottom: 0.3rem;
+  padding-right: 0.7rem;
+  padding-left: 0.7rem;
+  border-radius: 0.4rem;
+  transition: opacity 0.3s;
 }
 
 .deleteReviewsButton{
-  background-color: papayawhip;
-  border-radius: 5px;
+  font-size: 18px;
+  background-color: red;
+  opacity: 0.8;
+  color: white;
+  border: none;
+  font-weight: bold;
+  margin-top: 1rem;
+  padding-top: 0.3rem;
+  padding-bottom: 0.3rem;
+  padding-right: 0.7rem;
+  padding-left: 0.7rem;
+  border-radius: 0.4rem;
+  transition: opacity 0.3s;
 }
 
+.deleteReviewsButton:hover{
+  opacity: 1;
+  cursor: pointer;
+}
 
+.seeReviewsButton:hover{
+  opacity: 1;
+  cursor: pointer;
+}
 .profilePic{
   border-radius: 50%;
 

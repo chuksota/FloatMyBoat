@@ -1,3 +1,4 @@
+
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
@@ -9,9 +10,10 @@ const CreateReviewForm = ({id}) => {
   console.log(id)
   const dispatch = useDispatch();
   const [review, setReview] = useState("");
-  const sessionUser = useSelector(state=>state.session.user)
+  const [author, setAuthor] = useState("")
   const resetFields = () => {
     setReview("")
+    setAuthor('')
     return
   }
 
@@ -19,10 +21,9 @@ const CreateReviewForm = ({id}) => {
     e.preventDefault();
 
     const newReview = {
+      author,
       review,
       listingId: id,
-      userId: sessionUser.id
-
     };
     await dispatch(createReview(newReview))
     resetFields()
@@ -32,14 +33,19 @@ const CreateReviewForm = ({id}) => {
   return (
     <section className="new-form-holder centered middled">
       <form className="review-form" onSubmit={handleSubmit}>
+        <label className='create_review--label'>Author</label>
+        <input className='create_review--input'
+        type='text'
+        value={author}
+        onChange={e=>setAuthor(e.target.value)}/>
         <textarea
-          className="review-input"
+          className="create_review--input"
           type="text"
           placeholder="Leave a review..."
           value={review}
           onChange={e => setReview(e.target.value)} />
 
-        <button type="submit">Submit</button>
+        <button className='create_review--button' type="submit">Submit</button>
       </form>
     </section>
   );

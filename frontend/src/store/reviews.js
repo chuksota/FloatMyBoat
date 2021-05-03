@@ -18,7 +18,6 @@ export const createReview = newReview => async dispatch => {
   })
   if(!res.ok) throw res;
   const review = res.json()
-  console.log(review)
   dispatch(createAReview(review))
 }
 
@@ -27,7 +26,6 @@ export const getReviews = (id) => async dispatch => {
   if(res.ok){
     const reviews = await res.json()
     dispatch(loadReviews(reviews))
-    console.log("Im in the reviewsReducer", reviews)
   }
 }
 
@@ -36,7 +34,7 @@ const reviewsReducer = (state = {all: [], current:{}} , action) => {
     case LOAD_REVIEWS: {
       const newState = {}
       const allReviews = []
-      console.log(action.review)
+      console.log(action.reviews)
       action.reviews.forEach(review=>{
         allReviews.push(review)
       })
@@ -47,12 +45,12 @@ const reviewsReducer = (state = {all: [], current:{}} , action) => {
     case CREATE_REVIEW: {
       const newState = {}
       const allReviews = []
-      action.listingReviews.forEach(review=>{
+      state.all.forEach(review=>{
         allReviews.push(review)
       })
       newState.all=allReviews
       newState.current = {...state.current}
-      newState.all.push(action.newReview)
+      newState.all.push(action.review)
       return newState
     }
   default:

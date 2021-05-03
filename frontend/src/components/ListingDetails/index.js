@@ -5,16 +5,13 @@ import { useEffect } from 'react'
 import { getReviews } from '../../store/reviews'
 import './ListingDetails.css'
 import CreateReviewForm from '../CreateReviewForm'
-import {NavLink} from 'react-router-dom'
 function ListingDetails(){
   const {id} = useParams()
   const dispatch = useDispatch()
   const details = useSelector(state=> state.destinationListings.current)
   const reviews = useSelector(state=> state.reviews.all )
   const sessionUser = useSelector(state=> state.session.user)
-  const goBackToListings = () => {
-
-  }
+  
   useEffect(()=>{
     dispatch(getOneListing(id))
     dispatch(getReviews(id))

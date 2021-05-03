@@ -13,8 +13,9 @@ router.get('/:id', asyncHandler(async(req, res)=>{
 }))
 
 router.post('/', asyncHandler(async(req, res)=>{
-  const {review, listingId} = req.body
+  const {author, review, listingId} = req.body
   let newReview = await Review.create({
+    author,
     review,
     listingId
   })

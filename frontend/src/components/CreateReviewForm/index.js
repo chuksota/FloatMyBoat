@@ -5,7 +5,7 @@ import CreateReviewForm from './CreateReviewForm';
 
 
 
-function CreateListingModal() {
+function CreateReviewModal() {
   const [showModal, setShowModal] = useState(false);
   const {id} = useParams()
 
@@ -22,4 +22,4 @@ function CreateListingModal() {
   );
 }
 
-export default CreateListingModal;
+export default CreateReviewModal;

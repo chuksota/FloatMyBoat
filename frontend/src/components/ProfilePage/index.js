@@ -14,7 +14,16 @@ function ProfilePage() {
   const user = useSelector(state => state.session.user)
   const userInfo = useSelector(state => state.userInfo.all)
 
-
+  let location;
+  if(user.id === 1){
+    location = "New York City, United States"
+  } else if(user.id === 2) {
+    location = "Istanbul, Turkey"
+  } else if(user.id === 3) {
+    location = "Enohia Nkalu, Africa"
+  } else if(user.id === 4) {
+    location = "Mykonos, Greece"
+  }
 
   useEffect(() => {
     dispatch(getDestinations())
@@ -38,7 +47,7 @@ function ProfilePage() {
           <h3 className='headings'> Your current listings</h3>
           {
             userInfo.map(listing =>
-              <Listing key={listing.id} listing={listing} />
+              <Listing key={listing.id} listing={listing} location={location} />
             )}
         </div>
         <div className='about'>
@@ -48,7 +57,6 @@ function ProfilePage() {
               <NavLink key={destination.id} to={`/destinations/${destination.id}/listings`}>
                 <div key={destination.id} className={`dashboardLocationCards`}>
                   <div>{`${destination.city}, ${destination.country}`}</div>
-                  <img alt='' className='images' src={destination.imageUrl}/>
                 </div>
               </NavLink>
             ))}

@@ -7,10 +7,10 @@ import { createReview } from '../../store/reviews';
 import './CreateReviewForm.css';
 
 const CreateReviewForm = ({id}) => {
-  console.log(id)
   const dispatch = useDispatch();
   const [review, setReview] = useState("");
   const [author, setAuthor] = useState("")
+  
   const resetFields = () => {
     setReview("")
     setAuthor('')

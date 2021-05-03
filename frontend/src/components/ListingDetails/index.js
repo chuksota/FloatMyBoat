@@ -6,7 +6,7 @@ import { getReviews } from '../../store/reviews'
 import {deleteReview} from '../../store/reviews'
 import './ListingDetails.css'
 import CreateReviewForm from '../CreateReviewForm'
-
+import CreateReviewModal from '../CreateReviewForm/index'
 function ListingDetails(){
   const {id} = useParams()
   const dispatch = useDispatch()
@@ -33,7 +33,7 @@ function ListingDetails(){
   let reviewForm;
   if(sessionUser){
     reviewForm = (
-      <CreateReviewForm />
+      <CreateReviewModal />
     );
   }else {
     reviewForm =(
@@ -70,9 +70,7 @@ function ListingDetails(){
             <div className='reviewAuthor'>Author: {review.author} </div>
 
             <div className='reviewText'>Review: {review.review} </div>
-            <div>
             <button className='delete_review--button' onClick={()=>deleteAReview(review.id)}>Delete This review</button>
-            </div>
           </div>
         ))}
       </div>

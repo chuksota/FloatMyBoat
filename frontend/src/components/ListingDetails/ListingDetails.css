@@ -4,9 +4,9 @@
   height: 25em;
   box-sizing: border-box;
   box-shadow: 3px 3px 3px 3px rgba(0,0,0, .4);
-  width: 500px;
+  width: 100%;
   margin: 5px;
-  background-color: white;
+
 }
 
 .reviews_container{
@@ -35,7 +35,7 @@ height:100%;
 }
 
 .listingPicture{
-  width:100%;
+  width:10em  ;
   height: 15em;
-  object-fit: contain;
+  object-fit: contain
 }

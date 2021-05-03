@@ -18,6 +18,7 @@ const Listing = ({listing}) => {
   }
   return (
     <div className={`dashboard__listingCard`}>
+      <img className='profileListingPic' src={listing.imageUrl}/>
     <p>{listing.description}</p>
    <button className='seeReviewsButton' onClick={()=>goToReviews(listing.id)}>See reviews</button>
    <button className='deleteReviewsButton' onClick={()=> {deleteListingConfirmation(listing.id)}}>Delete Listing</button>

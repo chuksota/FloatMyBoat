@@ -13,15 +13,14 @@ function Navigation({ isLoaded }){
     sessionLinks = (
       <>
       <ProfileButton user={sessionUser} />
-      <NavLink to='/destinations'>Destinations</NavLink>
       </>
     );
   } else {
     sessionLinks = (
       <>
-        <button><NavLink to='/destinations'>Destinations</NavLink></button>
-        <LoginFormModal className='nav-links'/>
-        <button><NavLink className='nav-links' to="/signup">Sign Up</NavLink></button>
+        <button className='button1'><NavLink to='/destinations'>Destinations</NavLink></button>
+        <LoginFormModal className='button2'/>
+        <button className='button3'><NavLink  to="/signup">Sign Up</NavLink></button>
       </>
     );
   }
@@ -31,7 +30,7 @@ function Navigation({ isLoaded }){
       <div className='nav-links'>
         <NavLink exact to="/">Float My Boat</NavLink>
       </div>
-        <div className='buttons'>{isLoaded && sessionLinks}</div>
+        <div  className='buttons'>{isLoaded && sessionLinks}</div>
     </div>
   );
 }

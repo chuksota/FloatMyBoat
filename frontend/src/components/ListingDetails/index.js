@@ -13,7 +13,7 @@ function ListingDetails(){
   const reviews = useSelector(state=> state.reviews.all )
   const sessionUser = useSelector(state=> state.session.user)
   const goBackToListings = () => {
-    
+
   }
   useEffect(()=>{
     dispatch(getOneListing(id))
@@ -23,7 +23,7 @@ function ListingDetails(){
   let reviewForm;
   if(sessionUser){
     reviewForm = (
-      <CreateReviewForm listingId={id} user={sessionUser}/>
+      <CreateReviewForm />
     );
   }else {
     reviewForm =(
@@ -32,16 +32,12 @@ function ListingDetails(){
   }
   return(
     <div>
-      <button>Back to Listings</button>
-      <h1>Reviews for:</h1>
-      {reviewForm}
+
+
       <div className='listing__details-container'>
       <img src={details.imageUrl} className="listingPicture"></img>
         <div>
           Description: {details.description}
-        </div>
-      <div>
-      Address: {details.address}
         </div>
       <div>
       Boat Type: {details.boatType}
@@ -53,6 +49,7 @@ function ListingDetails(){
           Number of Guests possible: {details.numOfGuests}
         </div>
       </div>
+      {reviewForm}
 
       <div className='reviews_container'>
         {reviews.map(review => (

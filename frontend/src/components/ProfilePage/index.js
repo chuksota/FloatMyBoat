@@ -27,8 +27,9 @@ function ProfilePage() {
     <main className="index__dashboard">
       <div className="profile_info">
         <div className='userInfo'>
-          <img className='profilePic' src={user.profileImageUrl} />
-          <h1>{user.username} </h1>
+          <img className='profilePic' alt='' src='https://floatyourboatimages.s3.us-east-2.amazonaws.com/Demo-lition+profile+pic.jpg' />
+          <p>Username: {user.username} </p>
+          <p>Email: {user.email}</p>
         </div>
       </div>
 
@@ -46,8 +47,8 @@ function ProfilePage() {
             destinations.map(destination => (
               <NavLink key={destination.id} to={`/destinations/${destination.id}/listings`}>
                 <div key={destination.id} className={`dashboardLocationCards`}>
-                  {`${destination.city}, ${destination.country}`}
-                  <img className='images' src={destination.imageUrl}/>
+                  <div>{`${destination.city}, ${destination.country}`}</div>
+                  <img alt='' className='images' src={destination.imageUrl}/>
                 </div>
               </NavLink>
             ))}

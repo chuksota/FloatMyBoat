@@ -1,17 +1,11 @@
 .footer-container {
-  height: 20px;
-  background-color: white;
-  border-top: 1px solid rgb(211, 211, 211);
-  box-shadow: 0px 0px 10px grey;
-  font-family: Arial, Helvetica, sans-serif;
-  padding: 2em;
-  display: flex;
-  flex-direction: column;
-  align-content: center;
-  justify-content: center;
-  bottom: 0;
   position: fixed;
-  width: 100%
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color:white;
+  color: white;
+  text-align: center;
 }
 
 .footer-container .footer-description {

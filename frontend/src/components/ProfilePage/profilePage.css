@@ -10,7 +10,7 @@
 }
 
 .headings{
-  color: blue;
+  color: #04009a;
   box-sizing: border-box;
   border-bottom: 1px solid rgba(0,0,0,0.15);
   margin-left: 5px;
@@ -23,7 +23,7 @@
   padding: 0 0 35px 0;
   border-bottom: 1px solid #e6e6e6;
   box-sizing: border-box;
-  background-color: #fff;
+  background-color: #FAF9F6;
   box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.15);
   width: 500px;
   justify-content: center;
@@ -45,7 +45,7 @@
 }
 
 .all__listings{
-    background-color: #fff;
+    background-color:  #FAF9F6;
     border-radius: 2px;
     box-sizing: border-box;
     box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.15);
@@ -56,7 +56,7 @@
 .about{
   height: 100%;
   padding-bottom: 5px;
-  background-color: #fff;
+  background-color:  #FAF9F6;
   box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.15);
   border-radius: 5px;
 }
@@ -84,60 +84,13 @@
   background-color: papayawhip;
   border-radius: 5px;
 }
-/* .dashboard{
-  padding-top: 20px;
-  display: grid;
-  grid-template-columns: 1fr .1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
-  grid-template-areas:
-  "profileCard . acceptingGuests"
-  "profileCard . acceptingGuests"
-  "profileCard . currentListings"
-  "profileCard . currentListings"
-  "profileCard . aboutSection"
-  "profileCard . aboutSection"
-  ;
+
+
+.profilePic{
+  border-radius: 50%;
+
 }
 
-.dash_board--left{
-  grid-area: profileCard;
-  box-sizing: border-box;
-  box-shadow: 2px 2px 2px 2px rgba(0,0,0, .5);
-  padding: 1em;
-  margin-left: 2em;
+.profileListingPic{
+  border-radius: 50%;
 }
-
-.accepting_guests{
-  grid-area: acceptingGuests;
-  font-family: Georgia, 'Times New Roman', Times, serif;
-  box-shadow: 2px 2px 2px 2px rgba(0,0,0, .5);
-  padding-bottom: 1em;
-}
-
-.all__listings{
-  grid-area: currentListings;
-  box-shadow: 2px 2px 2px 2px rgba(0,0,0, .5);
-  display: flex;
-  flex-direction: row;
-  padding-top: 2em;
-  padding-bottom: 1em;
-}
-
-.about{
-  display: flex;
-  grid-area: aboutSection;
-  flex-direction: row;
-  justify-content: space-around;
-  box-shadow: 2px 2px 2px 2px rgba(0,0,0, .5);
-  height: 100px;
-  font-family: Georgia, 'Times New Roman', Times, serif;
-  padding-top: 2em;
-}
-
-.dasboardlocationCards{
-  display: flex;
-  box-sizing: border-box;
-  font-size: small;
-  flex-direction: row;
-
-  } */

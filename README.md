@@ -18,6 +18,9 @@ Live Link: [Float My Boat](http://floatmyboat.herokuapp.com/)
   * Reviews - Users are able to create and delete reviews
   * Profile page - Users are able to see all of their current lisintgs, as well as all of the possible destinations for them to travel to. 
 
+
+![Gif](https://media.giphy.com/media/7Hfoa6OPbCifkhP7iY/giphy.gif)
+
 ## Future Features
   * Users will be able to book a listing
   * Users will be able to search for listings based on a user specified criteria. 

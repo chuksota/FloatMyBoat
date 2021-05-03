@@ -43,10 +43,10 @@ function ListingDetails(){
       Boat Type: {details.boatType}
         </div>
         <div>
-          Price per day: {details.price}
+          Price per day: $ {details.price}
         </div>
         <div>
-          Number of Guests possible: {details.numOfGuests}
+          Number of Passengers: {details.numOfGuests}
         </div>
       </div>
       {reviewForm}

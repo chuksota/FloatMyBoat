@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { createNewListing } from '../../store/listings'
-
+import './CreateLists.css'
 const CreateNewListing = ({id}) => {
   const user = useSelector(state=> state.session.user)
   const dispatch = useDispatch()
@@ -35,7 +35,7 @@ const CreateNewListing = ({id}) => {
   }
   return (
     <div>
-      <form onSubmit={handleSubmit}>
+      <form className='createListingForm' onSubmit={handleSubmit}>
         <textarea
         value={description}
         onChange={e=> setDescription(e.target.value)}

@@ -1,6 +1,11 @@
 import {csrfFetch} from './csrf'
 const LOAD_REVIEWS = 'reviews/LOAD_REVIEWS'
 const CREATE_REVIEW = 'reviews/CREATE_REVIEW'
+
+const  createAReview = review => ({
+  type: CREATE_REVIEW,
+  review
+})
 const loadReviews = reviews => ({
   type: LOAD_REVIEWS,
   reviews
@@ -13,7 +18,8 @@ export const createReview = newReview => async dispatch => {
   })
   if(!res.ok) throw res;
   const review = res.json()
-  dispatch(createReview(review))
+  console.log(review)
+  dispatch(createAReview(review))
 }
 
 export const getReviews = (id) => async dispatch => {
@@ -30,6 +36,7 @@ const reviewsReducer = (state = {all: [], current:{}} , action) => {
     case LOAD_REVIEWS: {
       const newState = {}
       const allReviews = []
+      console.log(action.review)
       action.reviews.forEach(review=>{
         allReviews.push(review)
       })

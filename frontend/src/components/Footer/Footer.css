@@ -1,5 +1,5 @@
 .footer-container {
-  position: fixed;
+  position: relative;
   left: 0;
   bottom: 0;
   width: 100%;
@@ -8,19 +8,8 @@
   text-align: center;
 }
 
-.footer-container .footer-description {
-  font-size: 16px;
-  text-align: center;
-}
-
-.footer-icons {
-  display: flex;
-  flex-direction: row;
-  align-content: flex-end;
-  justify-content: center;
-}
 .footer-icons img {
-  height: 3em;
+  height: 30px;
   text-align: center;
   padding: 2em;
   align-self: center;

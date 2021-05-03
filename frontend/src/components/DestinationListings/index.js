@@ -28,7 +28,7 @@ const DestinationListings = () => {
 
   return (
     <>
-      <h1>Pick your next adventure!</h1>
+      <h1 className='heading'>Pick your next adventure!</h1>
       {userForm}
       <div className='listings__container'>
 

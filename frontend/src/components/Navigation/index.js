@@ -28,7 +28,7 @@ function Navigation({ isLoaded }){
   return (
     <div className='nav-bar'>
       <div className='nav-links'>
-        <NavLink exact to="/">Float My Boat</NavLink>
+        <NavLink className='Home' exact to="/">Float My Boat</NavLink>
       </div>
         <div  className='buttons'>{isLoaded && sessionLinks}</div>
     </div>
